@@ -1,0 +1,4 @@
+[cig]Canadian Classic[20]
+[cig]LD Bold Classic[18]
+[cig]LD Bold[18]
+[cig]Phile Morris[18]

@@ -38,19 +38,44 @@ class Menu(object):
             print("read menu.txt error")
             return None
 
+        food_count = 0
+        beer_count = 0
+        wine_count = 0
+        other_count = 0
+        unidentified_count = 0
+
         for item in self.menu:
-            temp = re.split('[][]', item)
-            if temp[1] == "food":
-                self.food_menu[temp[2]] = temp[3]
-                continue
-            if temp[1] == "beer":
-                self.beer_menu[temp[2]] = temp[3]
-                continue
-            if temp[1] == "wine":
-                self.wine_menu[temp[2]] = temp[3]
-                continue
-            if temp[1] == "other":
-                self.wine_menu[temp[2]] = temp[3]
+            try:
+                temp = re.split('[][]', item)
+                if temp[1] == "food":
+                    self.food_menu[temp[2]] = temp[3]
+                    food_count += 1
+                    continue
+                if temp[1] == "beer":
+                    self.beer_menu[temp[2]] = temp[3]
+                    beer_count += 1
+                    continue
+                if temp[1] == "wine":
+                    self.wine_menu[temp[2]] = temp[3]
+                    wine_count += 1
+                    continue
+                if temp[1] == "other":
+                    self.other_menu[temp[2]] = temp[3]
+                    other_count += 1
+                    continue
+                unidentified_count += 1
+                print('item "%s" not recognized'%temp[2])
+            except:
+                unidentified_count += 1
+                print('item "%s" not recognized'%item)
+
+        print("read menu completed.")
+        print("food item: %i"%food_count)
+        print("beer item: %i"%beer_count)
+        print("wine item: %i"%wine_count)
+        print("other item: %i"%other_count)
+        print("unidentified item: %i"%unidentified_count)
+
         return
 
     def update_database(self) -> None:
@@ -82,6 +107,6 @@ class Menu(object):
 if __name__ == "__main__":
     print("executing menu modul")
     menu = Menu()
-    menu.read_menu_file("abc")
+    menu.read_menu_file("data/menu.txt")
     print(menu.database_connection_stat)
     print(menu.food_menu)
