@@ -4,6 +4,9 @@ if database not in enviroment, then using this modul as local database
 """
 
 import re
+import os
+from dbconnector import *
+
 
 class Menu(object):
 
@@ -13,11 +16,15 @@ class Menu(object):
         self.food_data_stat = False
         self.beer_data_stat = False
         self.wine_data_stat = False
+        self.other_menu_stat = False
 
         self.food_menu = {}
         self.beer_menu = {}
         self.wine_menu = {}
         self.other_menu = {}
+
+        print("\nstart reading menu from input file")
+        self.read_menu_file("\\input\\price.txt")
 
         if db_connector is None:
             self.database_connection_stat = False
@@ -25,14 +32,20 @@ class Menu(object):
             self.database_connection_stat = True
             try:
                 self.connection = db_connector
+                print("database connected")
                 self.update_database()
+                print("database updated")
             except:
                 print("database connection error")
+
+
+
         return
 
-    def read_menu_file(self,menu_path) -> None:
+    def read_menu_file(self, menu_path) -> None:
+        cwd = os.getcwd()
         try:
-            with open(menu_path,"r") as f:
+            with open(cwd+menu_path, "r") as f:
                 self.menu = f.readlines()
         except:
             print("read menu.txt error")
@@ -64,49 +77,68 @@ class Menu(object):
                     other_count += 1
                     continue
                 unidentified_count += 1
-                print('item "%s" not recognized'%temp[2])
+                print('item "%s" not recognized' % temp[2])
             except:
                 unidentified_count += 1
-                print('item "%s" not recognized'%item)
+                print('item "%s" not recognized' % item)
 
         print("read menu completed.")
-        print("food item: %i"%food_count)
-        print("beer item: %i"%beer_count)
-        print("wine item: %i"%wine_count)
-        print("other item: %i"%other_count)
-        print("unidentified item: %i"%unidentified_count)
+        print("food item: %i" % food_count)
+        print("beer item: %i" % beer_count)
+        print("wine item: %i" % wine_count)
+        print("other item: %i" % other_count)
+        print("unidentified item: %i" % unidentified_count)
 
         return
 
     def update_database(self) -> None:
+        """
+        this function will acquire food, beer, wine, other data from database if exist
+        :input: None
+        :return: None
+        """
         if not self.database_connection_stat:
-            print("database not connected")
+            print("database not connected")  # if database is not connected, return
             return
 
-        try:
+        try:  # check food menu
             self.connection.cursor.execute("select * from FOOD")
-            food_data = self.connection.cursor.fetchall()
             self.food_data_stat = True
         except:
-            print("FOOD database acquire error")
+            print("FOOD data acquire error")
 
-        try:
+        try:  # check beer menu
             self.connection.cursor.execute("select * from BEER")
-            beer_data = self.connection.cursor.fetchall()
             self.beer_data_stat = True
         except:
-            print("FOOD database acquire error")
+            print("BEER data acquire error")
 
-        try:
+        try:  # check wine menu
             self.connection.cursor.execute("select * from WINE")
-            wine_data = self.connection.cursor.fetchall()
             self.wine_data_stat = True
         except:
-            print("FOOD database acquire error")
+            print("WINE data acquire error")
+
+        try:  # check other menu
+            self.connection.cursor.execute("select * from OTHER")
+            self.other_menu_stat = True
+        except:
+            print("OTHER data acquire error")
+
+        print("data acquire stat: FOOD--%s BEER--%s WINE--%s OTHER--%s"%(self.food_data_stat,self.beer_data_stat,self.wine_data_stat,self.other_menu_stat))
+
+        if self.food_data_stat is True:
+            for food in self.food_menu:
+                try:
+                    self.connection.cursor.execute("select price from FOOD where name = '%s'" %food)
+                    result = self.connection.cursor.fetchone()
+                    print("[%s] price acquired: %.2f " %(food,result[0]))
+                except:
+                    print("%s acquired fail from FOOD table" %food)
+
 
 if __name__ == "__main__":
-    print("executing menu modul")
-    menu = Menu()
-    menu.read_menu_file("data/menu.txt")
+    print("executing menu module main function")
+    db = DBConnector("root","lidiwen0513")
+    menu = Menu(db)
     print(menu.database_connection_stat)
-    print(menu.food_menu)
