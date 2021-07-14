@@ -1,0 +1,7 @@
+[food]Chicken Tender[13.6]
+[food]Wonton Soup[8.5]
+[food]Chicken Wings[9.99]
+[food]Chicken Fried Rice[8.5]
+[food]Deep Fried Ribs[12.99]
+[food]Poutine[8]
+[food]Fries[6]
