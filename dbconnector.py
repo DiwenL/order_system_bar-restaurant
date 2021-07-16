@@ -30,6 +30,10 @@ class DBConnector(object):
             print("database connection init fail")
             print("error when init database connection: ", sys.exc_info()[0])
 
+    def commit(self) -> None:
+        self.connection.commit()
+        return
+
     def close_cursor(self) -> None:
         self.cursor.close()
         return
@@ -38,9 +42,9 @@ class DBConnector(object):
         self.connection.close()
         return
 
-    def get_price_food(self, name) -> str:
+    def get_price_food(self, name) -> float:
         self.cursor.execute("select * from FOOD where name = %s", name)
-        return self.cursor.fetchone()[1]
+        return float(self.cursor.fetchone()[1])
 
 
 if __name__ == "__main__":

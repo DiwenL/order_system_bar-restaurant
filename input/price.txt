@@ -1,4 +1,4 @@
-[food]Wonton Soup[8.5]
+[food]Wonton Soup[9]
 [food]Chicken Fried Rice[8.5]
 [food]Chicken Wings[9.99]
 [beer]Kokanee[6]

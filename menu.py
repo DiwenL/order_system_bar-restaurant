@@ -35,10 +35,8 @@ class Menu(object):
                 print("database connected")
                 self.update_database()
                 print("database updated")
-            except:
-                print("database connection error")
-
-
+            except Exception as e:
+                print(e)
 
         return
 
@@ -61,24 +59,25 @@ class Menu(object):
             try:
                 temp = re.split('[][]', item)
                 if temp[1] == "food":
-                    self.food_menu[temp[2]] = temp[3]
+                    self.food_menu[temp[2]] = float(temp[3])
                     food_count += 1
                     continue
                 if temp[1] == "beer":
-                    self.beer_menu[temp[2]] = temp[3]
+                    self.beer_menu[temp[2]] = float(temp[3])
                     beer_count += 1
                     continue
                 if temp[1] == "wine":
-                    self.wine_menu[temp[2]] = temp[3]
+                    self.wine_menu[temp[2]] = float(temp[3])
                     wine_count += 1
                     continue
                 if temp[1] == "other":
-                    self.other_menu[temp[2]] = temp[3]
+                    self.other_menu[temp[2]] = float(temp[3])
                     other_count += 1
                     continue
                 unidentified_count += 1
                 print('item "%s" not recognized' % temp[2])
-            except:
+            except Exception as e:
+                print(e)
                 unidentified_count += 1
                 print('item "%s" not recognized' % item)
 
@@ -127,15 +126,39 @@ class Menu(object):
 
         print("data acquire stat: FOOD--%s BEER--%s WINE--%s OTHER--%s"%(self.food_data_stat,self.beer_data_stat,self.wine_data_stat,self.other_menu_stat))
 
+        # update food database from food menu file
         if self.food_data_stat is True:
+            food_diff = {}
+            food_new = {}
             for food in self.food_menu:
-                try:
-                    self.connection.cursor.execute("select price from FOOD where name = '%s'" %food)
-                    result = self.connection.cursor.fetchone()
-                    print("[%s] price acquired: %.2f " %(food,result[0]))
-                except:
-                    print("%s acquired fail from FOOD table" %food)
+                try:  # check if food is in database
+                    result = self.connection.get_price_food(food)  # acquire the price
+                    print("[%s] price acquired: %.2f " %(food,result))
 
+                    if self.food_menu[food] != result:  # if the price from database is different from menu file
+                        food_diff[food] = [result,self.food_menu[food]]  # record the different
+                except:  # if the food is not in database
+                    print("[%s] not in database" %food)
+                    food_new[food] = self.food_menu[food]
+
+            print("updating food database")
+
+            print("%i food's price changed" %len(food_diff))
+            for food in food_diff:
+                try:
+                    sql = "update food set price = %.2f where name = '%s'" %(food_diff[food][1],food)
+                    self.connection.cursor.execute(sql)
+                    self.connection.commit()
+                    print("[%s] %.2f -> %.2f updated successfully" % (food, food_diff[food][0], food_diff[food][1]))
+                except:
+                    print("update [%s] fail" %food)
+
+            print("%i new food" %len(food_new))
+            for food in food_new:
+                sql = "insert into food (name, price) value ('%s', %.2f)" %(food, food_new[food])
+                self.connection.cursor.execute(sql)
+                self.connection.commit()
+                print("new food [%s] %.2f updated sccessfully" % (food, food_new[food]) )
 
 if __name__ == "__main__":
     print("executing menu module main function")
