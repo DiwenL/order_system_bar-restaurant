@@ -1,6 +1,19 @@
-[food]Wonton Soup[9]
+[food]Wonton Soup[8.5]
+[food]Wor Wonton[13.99]
 [food]Chicken Fried Rice[8.5]
+[food]Beef Fried Rice[9.99]
+[food]Shrimp Fried Rice[10.99]
+[food]Pork Fried Rice[9.5]
+[food]Special Fried Rice[10.99]
+[food]Chicken Lo Mein[11.99]
+[food]Beef Lo Mein[11.99]
 [food]Chicken Wings[9.99]
-[beer]Kokanee[6]
+
+[beer]Kokanee[bottle][1][6]
+
 [wine]Smirnoff Vodka 375ml[18]
-[wine]Wisers Whisky 375ml[17]
+[wine]Wiser's Whisky 375ml[17]
+
+[other]Canadian Classic[20]
+[other]Coke[2]
+[other]Pepsi[2]

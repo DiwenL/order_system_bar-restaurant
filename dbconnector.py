@@ -25,10 +25,10 @@ class DBConnector(object):
                 charset='utf8')
             self.cursor = self.connection.cursor()
             self.cursor.execute("use cupar_menu")
-            print("database connection init successfully")
+            print("dbconnector: database connection init successfully")
         except:
-            print("database connection init fail")
-            print("error when init database connection: ", sys.exc_info()[0])
+            print("dbconnector: database connection init fail")
+            print("dbconnector: error when init database connection: ", sys.exc_info()[0])
 
     def commit(self) -> None:
         self.connection.commit()
@@ -46,6 +46,17 @@ class DBConnector(object):
         self.cursor.execute("select * from FOOD where name = %s", name)
         return float(self.cursor.fetchone()[1])
 
+    def insert_food(self, name, price) -> None:
+        sql = "insert into food (name, price) value ('%s', %.2f)" %(name,price)
+        self.cursor.execute(sql)
+        self.commit()
+        return
+
+    def update_food(self, name, new_price) -> None:
+        sql = "update food set price = %.2f where name = '%s'" % (new_price, food)
+        self.connection.cursor.execute(sql)
+        self.connection.commit()
+        return
 
 if __name__ == "__main__":
     print("this is db_connector's main function")
