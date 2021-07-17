@@ -78,7 +78,7 @@ class Menu(object):
             food = food.split("\n")[0]
             temp = re.split('[][]', food)
             try:
-                self.food_menu[temp[0]] = temp[1]
+                self.food_menu[temp[2]] = float(temp[3])
             except Exception as e:
                 unidentified.append(food)
                 print("menu: unidentified [%s]: " % food, e)
@@ -154,25 +154,27 @@ class Menu(object):
                     food_new[food] = self.food_menu[food]
 
             print("menu: food menu compare completed")
+            print("%i food's price changed" % len(food_dif))
+            print("%i new food" % len(food_new))
 
             # update new food price
-            print("%i food's price changed" %len(food_dif))
-            for food in food_dif:
-                try:
-                    self.connection.update_food(food,food_dif[1])
-                    print("[%s] %.2f -> %.2f updated successfully" % (food, food_dif[food][0], food_dif[food][1]))
-                except Exception as e:
-                    print("update [%s] FAIL: " %food, e)
-            
+            if len(food_dif) != 0:
+                for food in food_dif:
+                    try:
+                        self.connection.update_food(food,food_dif[1])
+                        print("[%s] %.2f -> %.2f updated successfully" % (food, food_dif[food][0], food_dif[food][1]))
+                    except Exception as e:
+                        print("update [%s] FAIL: " %food, e)
+
             # insert new food
-            print("%i new food" %len(food_new))
-            for food in food_new:
-                try:
-                    self.connection.insert_food(food,food_new[food])
-                    print("new food [%s] %.2f updated successfully" % (food, food_new[food]) )
-                except Exception as e:
-                    print("insert [%s] FAIL: "%food, e)
-        
+            if len(food_new) != 0:
+                for food in food_new:
+                    try:
+                        self.connection.insert_food(food,food_new[food])
+                        print("new food [%s] %.2f updated successfully" % (food, food_new[food]) )
+                    except Exception as e:
+                        print("insert [%s] FAIL: "%food, e)
+
         if self.beer_data_stat is True:
             beer_dif = {}
             beer_new = {}
