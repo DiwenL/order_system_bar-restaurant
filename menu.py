@@ -6,6 +6,7 @@ if database not in enviroment, then using this modul as local database
 import re
 import os
 from dbconnector import *
+from order import *
 
 
 class Menu(object):
@@ -17,7 +18,8 @@ class Menu(object):
 
         self.tables_stat = {}
         self.menus = {}
-        self.menus_name = ["food", "drinkin", "wine", "pop", "cig","other"]
+        self.menus_name = ["food", "drinkin", "wine", "pop", "cig", "other"]
+        self.offsale_menu = {}
         for menu in self.menus_name:
             self.tables_stat[menu] = False
             self.menus[menu] = {}
@@ -151,11 +153,19 @@ class Menu(object):
                         try:
                             self.connection.insert_food(menu, item, new[item])
                             #self.connection.commit()
-                            print("new food [%s] $%.2f updated successfully" % (item, new[item]))
+                            print("new %s [%s] $%.2f updated successfully" % (menu, item, new[item]))
                         except Exception as e:
                             print("insert [%s] FAIL: " % item, e)
 
         return
+
+    def get_price(self,name ,table) -> float:
+        if self.database_connection_stat and self.tables_stat[table]:
+            try:
+                price = self.connection.get_price(name,table)
+            except Exception as e:
+                print("menu: get price for [%s] from [%s] FAIL: " % (name, table), e)
+
 
 if __name__ == "__main__":
     print("executing MENU module main function")

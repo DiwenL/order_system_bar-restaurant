@@ -42,8 +42,8 @@ class DBConnector(object):
         self.connection.close()
         return
 
-    def get_price_food(self, name) -> float:
-        self.cursor.execute("select * from FOOD where name = %s", name)
+    def get_price(self, table, name) -> float:
+        self.cursor.execute("select * from %s where name = %s" % (table, name))
         return float(self.cursor.fetchone()[1])
 
     def insert_food(self, table, name, price) -> None:

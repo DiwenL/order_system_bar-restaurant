@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="separate food/beerin/beergo menu">
-      <change afterPath="$PROJECT_DIR$/data/menu/drinkin_menu.txt" afterDir="false" />
+    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="separate food/drinkin/wine/cig/pop/other menu in menu.py&#10;completed insert/update functions in dbconnector.py&#10;update input files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/menu/beer_menu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/menu/beer_menu.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/menu/cig_menu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/menu/cig_menu.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/menu/food_menu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/menu/food_menu.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/menu/other_menu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/menu/other_menu.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/menu/pop_menu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/menu/pop_menu.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/menu/wine_menu.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/menu/wine_menu.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dbconnector.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbconnector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input/menu.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/input/price.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order.py" beforeDir="false" afterPath="$PROJECT_DIR$/order.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626484196499</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="separate food/drinkin/wine/cig/pop/other menu in menu.py&#10;completed insert/update functions in dbconnector.py&#10;update input files">
+      <created>1626494243285</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1626494243285</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +129,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="database updated function completed." />
     <MESSAGE value="separate food/beerin/beergo menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="separate food/beerin/beergo menu" />
+    <MESSAGE value="separate food/drinkin/wine/cig/pop/other menu in menu.py&#10;completed insert/update functions in dbconnector.py&#10;update input files" />
+    <option name="LAST_COMMIT_MESSAGE" value="separate food/drinkin/wine/cig/pop/other menu in menu.py&#10;completed insert/update functions in dbconnector.py&#10;update input files" />
   </component>
 </project>
