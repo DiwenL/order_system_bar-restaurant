@@ -42,9 +42,14 @@ class DBConnector(object):
         self.connection.close()
         return
 
-    def get_price(self, table, name) -> float:
-        self.cursor.execute("select * from %s where name = %s" % (table, name))
-        return float(self.cursor.fetchone()[1])
+    def get_price(self, name, table) -> float:
+        try:
+            self.cursor.execute("select * from %s where name = '%s'" % (table, name))
+            price = float(self.cursor.fetchone()[1])
+        except Exception as e:
+            print("dbconnector: get [%s] from %s FAIL" % (name, table))
+            price = -1
+        return price
 
     def insert_food(self, table, name, price) -> None:
         sql = "insert into %s (name, price) value ('%s', %.2f)" % (table, name, price)
@@ -61,5 +66,5 @@ class DBConnector(object):
 if __name__ == "__main__":
     print("this is db_connector's main function")
     dbc = DBConnector("root", "lidiwen0513")
-    food = dbc.get_price_food("Wonton Soup")
+    food = dbc.get_price("Wonton oup","food")
     print(food)

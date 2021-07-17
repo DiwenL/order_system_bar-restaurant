@@ -159,12 +159,23 @@ class Menu(object):
 
         return
 
-    def get_price(self,name ,table) -> float:
+    def get_price(self, name, table) -> float:
         if self.database_connection_stat and self.tables_stat[table]:
             try:
-                price = self.connection.get_price(name,table)
+                price = self.connection.get_price(name, table)
             except Exception as e:
-                print("menu: get price for [%s] from [%s] FAIL: " % (name, table), e)
+                print("menu: get price for [%s] from database [%s] FAIL: " % (name, table), e)
+                price = -1
+            return price
+        else:
+            # using local menu data
+            try:
+                price = self.menus[table][name]
+            except Exception as e:
+                print("menu: get price for [%s] from local [%s] FAIL: " % (name, table), e)
+                price = -1
+            return price
+
 
 
 if __name__ == "__main__":
