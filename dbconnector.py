@@ -46,14 +46,14 @@ class DBConnector(object):
         self.cursor.execute("select * from FOOD where name = %s", name)
         return float(self.cursor.fetchone()[1])
 
-    def insert_food(self, name, price) -> None:
-        sql = "insert into food (name, price) value ('%s', %.2f)" %(name,price)
+    def insert_food(self, table, name, price) -> None:
+        sql = "insert into %s (name, price) value ('%s', %.2f)" % (table, name, price)
         self.cursor.execute(sql)
         self.commit()
         return
 
-    def update_food(self, name, new_price) -> None:
-        sql = "update food set price = %.2f where name = '%s'" % (new_price, food)
+    def update_food(self, table, name, new_price) -> None:
+        sql = "update %s set price = %.2f where name = '%s'" % (table, new_price, name)
         self.connection.cursor.execute(sql)
         self.connection.commit()
         return

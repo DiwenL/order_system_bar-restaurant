@@ -1,0 +1,5 @@
+Kokanee[6]
+Canadian[6]
+Bud Light[6]
+Coors Light[6]
+Corona[6.75]

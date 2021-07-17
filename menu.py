@@ -15,17 +15,12 @@ class Menu(object):
 
         self.database_connection_stat = False
 
-        self.food_data_stat = False
-        self.beer_data_stat = False
-        self.wine_data_stat = False
-        self.other_menu_stat = False
-
-        self.food_menu = {}
-        self.beerin_menu = {}
-        self.beergo_menu = {}
-        self.wine_menu = {}
-        self.other_menu = {}
-
+        self.tables_stat = {}
+        self.menus = {}
+        self.menus_name = ["food", "drinkin", "wine", "pop", "cig","other"]
+        for menu in self.menus_name:
+            self.tables_stat[menu] = False
+            self.menus[menu] = {}
         print("menu: start reading menu from input file")
         self.read_menu_file()
 
@@ -40,6 +35,7 @@ class Menu(object):
                 print(e)
                 print("menu: database connected FAIL")
 
+            # check tables all exist
             try:
                 print("menu: start data tables check")
                 self.tables_check()
@@ -48,6 +44,7 @@ class Menu(object):
                 print(e)
                 print("menu: table check FAIL\n")
 
+            # update database
             try:
                 print("menu: updating price")
                 self.update_database()
@@ -58,35 +55,36 @@ class Menu(object):
 
         return
 
-    def read_menu_file(self,path="") -> None:
+    def read_menu_file(self, path="") -> None:
         if path == "":
             cwd = os.getcwd()
         else:
             cwd = path
 
-        # read food menu from file
-        try:
-            with open(cwd + "\\data\\menu\\food_menu.txt", "r") as f:
-                foods = f.readlines()
-        except Exception as e:
-            print("menu: read food_menu.txt error ",e)
-            return None
-
         unidentified = []
 
-        for food in foods:
-            food = food.split("\n")[0]
-            temp = re.split('[][]', food)
+        for menu in self.menus_name:
+
+            path = cwd + "\\data\\menu\\%s_menu.txt" % menu
+
+            # read file
             try:
-                self.food_menu[temp[2]] = float(temp[3])
+                with open(path, "r") as f:
+                    items = f.readlines()
             except Exception as e:
-                unidentified.append(food)
-                print("menu: unidentified [%s]: " % food, e)
-        print("menu: read food from input file completed.")
-        print("[food] item: %i" % len(self.food_menu))
-        print("[beerin] item: %i" % len(self.beerin_menu))
-        print("[wine] item: %i" % len(self.wine_menu))
-        print("[other] item: %i" % len(self.other_menu))
+                print("menu: read %s_menu.txt error " % menu, e)
+
+            # get price
+            for item in items:
+                name,price,_ = re.split('[][]', item.split("\n")[0])
+                try:
+                    self.menus[menu][name] = float(price)
+                except Exception as e:
+                    unidentified.append(item)
+                    print("menu: unidentified [%s]: " % item, e)
+
+            print("menu: read [%s] completed." % menu)
+
         print("[unidentified] item: %i\n" % len(unidentified))
 
         return
@@ -97,35 +95,13 @@ class Menu(object):
             print("menu: database not connected, tables check end")
             return
 
-        try:  # check food menu
-            self.connection.cursor.execute("select * from FOOD")
-            self.food_data_stat = True
-            print("[food] table connected SUCCESSFULLY")
-        except Exception as e:
-            print("[food] table connected FAIL: ",e,end="\n")
-
-        try:  # check beer menu
-            self.connection.cursor.execute("select * from BEER")
-            self.beer_data_stat = True
-            print("[beer] table connected SUCCESSFULLY")
-        except Exception as e:
-            print("[beer] table connected FAIL: ",e,end="\n")
-
-        try:  # check wine menu
-            self.connection.cursor.execute("select * from WINE")
-            self.wine_data_stat = True
-            print("[wine] table connected SUCCESSFULLY")
-        except Exception as e:
-            print("[wine] table connected FAIL: ",e,end="\n")
-
-        try:  # check other menu
-            self.connection.cursor.execute("select * from OTHER")
-            self.other_menu_stat = True
-            print("[other] table connected SUCCESSFULLY")
-        except Exception as e:
-            print("[other] table connected FAIL: ",e,end="\n")
-
-        print("menu: tables stat: FOOD--%s BEER--%s WINE--%s OTHER--%s"%(self.food_data_stat,self.beer_data_stat,self.wine_data_stat,self.other_menu_stat))
+        for menu in self.menus_name:
+            try:  # check food menu
+                self.connection.cursor.execute("select * from %s" % menu)
+                self.tables_stat[menu] = True
+                print("[%s] table test SUCCESSFULLY" % menu)
+            except Exception as e:
+                print("[%s] table connected FAIL: " % menu, e, end="\n")
 
         return
 
@@ -140,53 +116,49 @@ class Menu(object):
             return
 
         # update food database from food menu file
-        if self.food_data_stat is True:
-            food_dif = {}
-            food_new = {}
-            for food in self.food_menu:
-                try:  # check if food is in database
-                    result = self.connection.get_price_food(food)  # acquire the price
+        for menu in self.menus_name:
+            if self.tables_stat[menu]:
+                dif = {}
+                new = {}
 
-                    if self.food_menu[food] != result:  # if the price from database is different from menu file
-                        food_dif[food] = [result,self.food_menu[food]]  # record the different
-                except:  # if the food is not in database
-                    print("[%s] not in database" %food)
-                    food_new[food] = self.food_menu[food]
+                for item in self.menus[menu]:
+                    try:  # check if food is in database
+                        result = self.connection.get_price_food(item)  # acquire the price
 
-            print("menu: food menu compare completed")
-            print("%i food's price changed" % len(food_dif))
-            print("%i new food" % len(food_new))
+                        if self.menus[menu][item] != result:  # if the price from database is different from menu file
+                            dif[item] = [result, self.menus[menu][item]]  # record the different
+                    except Exception as e:  # if the food is not in database
+                        print("[%s] not in %s table" % (item, menu))
+                        new[item] = self.menus[menu][item]
 
-            # update new food price
-            if len(food_dif) != 0:
-                for food in food_dif:
-                    try:
-                        self.connection.update_food(food,food_dif[1])
-                        print("[%s] %.2f -> %.2f updated successfully" % (food, food_dif[food][0], food_dif[food][1]))
-                    except Exception as e:
-                        print("update [%s] FAIL: " %food, e)
+                print("menu: [%s] menu compare completed" % menu)
+                print("%i [%s] price changed" % (len(dif), menu))
+                print("%i new [%s]" % (len(new), menu))
 
-            # insert new food
-            if len(food_new) != 0:
-                for food in food_new:
-                    try:
-                        self.connection.insert_food(food,food_new[food])
-                        print("new food [%s] %.2f updated successfully" % (food, food_new[food]) )
-                    except Exception as e:
-                        print("insert [%s] FAIL: "%food, e)
+                # update new food price
+                if len(dif) != 0:
+                    for item in dif:
+                        try:
+                            self.connection.update_food(menu, item, dif[1])
+                            #self.connection.commit()
+                            print("[%s] %.2f -> %.2f updated successfully" % (item, dif[item][0], dif[item][1]))
+                        except Exception as e:
+                            print("update [%s] FAIL: " % item, e)
 
-        if self.beer_data_stat is True:
-            beer_dif = {}
-            beer_new = {}
+                # insert new food
+                if len(new) != 0:
+                    for item in new:
+                        try:
+                            self.connection.insert_food(menu, item, new[item])
+                            #self.connection.commit()
+                            print("new food [%s] $%.2f updated successfully" % (item, new[item]))
+                        except Exception as e:
+                            print("insert [%s] FAIL: " % item, e)
 
-            for beer in self.beerin_menu:
-                for kind in beer:
-                    price = self.beerin_menu[kind]
+        return
 
-
-            
 if __name__ == "__main__":
     print("executing MENU module main function")
-    db = DBConnector("root","lidiwen0513")
+    db = DBConnector("root", "lidiwen0513")
     menu = Menu(db)
     print(menu.database_connection_stat)

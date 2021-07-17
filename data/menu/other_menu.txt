@@ -1,1 +1,1 @@
-[other]Clamato[5]
+Clamato[5]
