@@ -43,3 +43,23 @@ class Order(object):
     def get_price(self) -> float:
         return self.__price
 
+    def get_name(self):
+        return self.__name
+
+    def get_amount(self):
+        return self.__amount
+
+    def get_comments(self):
+        return self.__comment_list
+
+    def get_detail(self):
+        s = "x%i   %s\n" % (self.get_amount(), self.get_name())
+        if len(self.__comment_list)!=0:
+            for comment in self.__comment_list:
+                s += "  --%s\n" % comment
+        s += "		$%i" % self.get_total()
+        return s
+
+    def get_info(self):
+        s = "%ix  %s\n        %.2f" % (self.get_amount(), self.get_name(), self.get_total())
+        return s

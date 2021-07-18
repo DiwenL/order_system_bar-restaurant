@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1600</width>
+    <height>900</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="btn1_1">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>0</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_1</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_2">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>90</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_3">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>180</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_4">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>270</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_4</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_5">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>360</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_5</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_6">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>450</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_6</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_7">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>540</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_7</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_exit">
+   <property name="geometry">
+    <rect>
+     <x>1820</x>
+     <y>1030</y>
+     <width>100</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>EXIT</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_5">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>360</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_5</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_3">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>180</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_7">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>540</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_7</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_1">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>0</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_1</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_2">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>90</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_6">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>450</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_6</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_4">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>270</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_4</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_5">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>360</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_5</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_3">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>180</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_7">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>540</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_7</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_1">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>0</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_1</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_2">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>90</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_6">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>450</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_6</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_4">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>270</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_4</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_8">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>630</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_8</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_9">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>720</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_9</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_8">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>630</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_8</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_9">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>720</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_9</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_add">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>820</y>
+     <width>150</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>60</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_sub">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>820</y>
+     <width>150</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>60</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_print">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>950</y>
+     <width>300</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>打印</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_new">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>950</y>
+     <width>300</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>新建</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_cash">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>820</y>
+     <width>200</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>现金</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="list_receipt">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>400</width>
+     <height>800</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="list_order">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>10</y>
+     <width>400</width>
+     <height>800</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_8">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>630</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_8</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_9">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>720</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_9</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_2">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>90</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_4">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>270</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_4</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_9">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>720</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_9</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_8">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>630</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_8</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_3">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>180</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_1">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>0</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_1</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_5">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>360</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_5</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_7">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>540</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_7</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_6">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>450</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_6</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_pay_2">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>820</y>
+     <width>200</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>刷卡</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_10">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>810</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_10</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_10">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>810</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_10</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_10">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>810</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_10</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_11">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>900</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_11</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_11">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>900</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_11</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_11">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>900</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_11</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn4_12">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>990</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu4_12</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn3_12">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>990</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu3_12</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2_12">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>990</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu2_12</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_10">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>810</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_10</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn1_11">
+   <property name="geometry">
+    <rect>
+     <x>1670</x>
+     <y>900</y>
+     <width>250</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>新宋体</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu1_11</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
