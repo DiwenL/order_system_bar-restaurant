@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="main function">
-      <change afterPath="$PROJECT_DIR$/creat_UI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui.py" afterDir="false" />
+    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="new way to make UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/creat_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/creat_UI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626666490478</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="new way to make UI">
+      <created>1626937561223</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1626937561223</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,6 +202,7 @@
     <MESSAGE value="connect order -&gt; menu -&gt; dbconnector" />
     <MESSAGE value="order system UI design. Base on Qt designer" />
     <MESSAGE value="main function" />
-    <option name="LAST_COMMIT_MESSAGE" value="main function" />
+    <MESSAGE value="new way to make UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="new way to make UI" />
   </component>
 </project>
