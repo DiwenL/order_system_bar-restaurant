@@ -1,3 +1,4 @@
+import re
 import sys
 import os
 import time
@@ -50,7 +51,7 @@ class Create_UI(object):
 
         return
 
-    def create_pages(self, page_name_list, tab_name):
+    def create_pages(self, page_name_list, tab_name) -> None:
         if len(page_name_list) == 0:
             return
 
@@ -102,19 +103,50 @@ class Create_UI(object):
 
         return
 
+    def read_ui_design(self) -> None:
+        ui_input_path = os.getcwd() + "\\data\\ui_input\\"
+        tab_list = os.listdir(ui_input_path)
+        self.design = {}
+        for tab_file in tab_list:
+            tab_name = re.split('[.]', tab_file)[1]
+            self.design[tab_name] = {}
+            with open (ui_input_path+tab_file, 'r') as f:  # read data from file
+                data = f.readlines()
+                f.close()
+
+            for line in data:
+                if line[0] == "[":
+                    page_name = re.split('[][]', line)[1]
+                    self.design[tab_name][page_name] = []
+                    current_page = page_name
+                else:
+                    self.design[tab_name][current_page].append(line.split("/n")[0])
+
+
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Create_UI()
+    ui.read_ui_design()
     ui.setupUI(MainWindow)
-    ui.create_tabs(["点餐","酒水","其他"])
-    ui.create_pages(["前菜","主食","肉食","蔬菜","汤类","套餐"],"点餐")
-    ui.create_button(["蛋卷2条","蛋卷5条","春节1条","春卷5条"],"点餐","前菜")
-    ui.create_button(["炒饭","炒面","捞面","上海面","新加坡面"],"点餐","主食")
-    ui.create_button(["炒饭","炒面","捞面","上海面","新加坡面"],"点餐","主食")
-    ui.create_pages(["啤酒","洋酒","预调鸡尾酒","调酒","a","b","c","d","e","f","g","h"],"酒水")
-    ui.create_button(["Kokanee","Canadian","Bud Light"],"酒水","啤酒")
+    #ui.create_tabs(["点餐","酒水","其他"])
+    #ui.create_pages(["前菜","主食","肉食","蔬菜","汤类","套餐"],"点餐")
+    #ui.create_button(["蛋卷2条","蛋卷5条","春节1条","春卷5条"],"点餐","前菜")
+    #ui.create_button(["炒饭","炒面","捞面","上海面","新加坡面"],"点餐","主食")
+    #ui.create_button(["炒饭","炒面","捞面","上海面","新加坡面"],"点餐","主食")
+    #ui.create_pages(["啤酒","洋酒","预调鸡尾酒","调酒","a","b","c","d","e","f","g","h"],"酒水")
+    #ui.create_button(["Kokanee","Canadian","Bud Light"],"酒水","啤酒")
+    print(ui.design)
+    tabs = list(ui.design.keys())
+    ui.create_tabs(tabs)
+    for tab in ui.design:
+        pages = list(ui.design[tab].keys())
+        ui.create_pages(pages,tab)
+        for page in ui.design[tab]:
+            btns = ui.design[tab][page]
+            ui.create_button(btns,tab,page)
+
     MainWindow.show()
     sys.exit(app.exec_())

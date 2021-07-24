@@ -1,0 +1,12 @@
+[啤酒]
+Kokanee
+Canadian
+Coors Light
+Bud Light
+[shot]
+Vodka
+Whisky
+Rum
+[cocktail]
+Rye Coke
+Vodka Special

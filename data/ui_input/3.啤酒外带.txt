@@ -1,0 +1,12 @@
+[Kokanee]
+Bottle
+Can
+[Canadian]
+Bottle
+Can
+[Coors Light]
+Bottle
+Can
+[Bud Light]
+Bottle
+Can

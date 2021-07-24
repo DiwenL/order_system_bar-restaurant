@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="using menu list to create UI">
+      <change afterPath="$PROJECT_DIR$/data/ui_input/其他.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ui_input/堂饮.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/ui_input/酒水外带.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/creat_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/creat_UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/receipt.py" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627020055198</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="using menu list to create UI">
+      <created>1627085450375</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1627085450375</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
