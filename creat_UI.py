@@ -18,9 +18,10 @@ class Create_UI(object):
 
         self.centralwidget = QtWidgets.QWidget(MainWindow)  # set main widget
         self.centralwidget.setObjectName("centralwidget")
+        MainWindow.setCentralWidget(self.centralwidget)
 
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)  # set tab widget
-        self.tabWidget.setGeometry(QtCore.QRect(0, 0, 1000, 1000))  # set tab widget size
+        self.tabWidget.setGeometry(QtCore.QRect(920, 0, 1000, 1000))  # set tab widget size
         self.tabWidget.setFont(self.font_list[24])
         self.tabWidget.setObjectName("tab_menu")
 
@@ -34,14 +35,12 @@ class Create_UI(object):
         for tab_name in tab_name_list:
             tab = QtWidgets.QWidget()
             tab.setObjectName("tab_%s" % tab_name)
-            self.tabWidget.addTab(tab,"")
+            self.tabWidget.addTab(tab, "")
             self.tabWidget.setTabText(self.tabWidget.indexOf(tab),self.translate("MainWindow",tab_name))
 
             toolbox = QtWidgets.QToolBox(tab)
             toolbox.setGeometry(QtCore.QRect(0, 10, 1000, 900))
-            font = QtGui.QFont()
-            font.setPointSize(20)
-            toolbox.setFont(font)
+            toolbox.setFont(self.font_list[20])
             toolbox.setObjectName("toolbox_%s" % tab_name)
 
             self.tab_list[tab_name] = tab
@@ -66,6 +65,7 @@ class Create_UI(object):
             page.setGeometry(QtCore.QRect(0, 0, 1000, 405))
             page.setObjectName(page_name)
             toolbox.addItem(page, "")
+            toolbox.setItemText(toolbox.indexOf(page),self.translate("MainWindow",page_name))
 
             self.page_list[tab_name][page_name] = page
             self.btn_list[tab_name][page_name] = {}
@@ -109,8 +109,12 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Create_UI()
     ui.setupUI(MainWindow)
-    ui.create_tabs(["a","b","c"])
-    ui.create_pages(["aa","bb","cc"],"a")
-    ui.create_button(["aaa","bbb","ccc"],"a","aa")
+    ui.create_tabs(["点餐","酒水","其他"])
+    ui.create_pages(["前菜","主食","肉食","蔬菜","汤类","套餐"],"点餐")
+    ui.create_button(["蛋卷2条","蛋卷5条","春节1条","春卷5条"],"点餐","前菜")
+    ui.create_button(["炒饭","炒面","捞面","上海面","新加坡面"],"点餐","主食")
+    ui.create_button(["炒饭","炒面","捞面","上海面","新加坡面"],"点餐","主食")
+    ui.create_pages(["啤酒","洋酒","预调鸡尾酒","调酒","a","b","c","d","e","f","g","h"],"酒水")
+    ui.create_button(["Kokanee","Canadian","Bud Light"],"酒水","啤酒")
     MainWindow.show()
     sys.exit(app.exec_())
