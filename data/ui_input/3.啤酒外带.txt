@@ -1,12 +1,22 @@
-[Kokanee]
-Bottle
-Can
-[Canadian]
-Bottle
-Can
-[Coors Light]
-Bottle
-Can
-[Bud Light]
-Bottle
-Can
+[Bottle]
+Kokanee
+Canadian
+Coors Light
+Bud Light
+Bud Weiser
+Bohemian
+Pilsner
+Calgary
+OV
+Corona
+[can]
+Kokanee
+Canadian
+Coors Light
+Bud Light
+Bud Weiser
+Bohemian
+Pilsner
+Calgary
+OV
+Corona

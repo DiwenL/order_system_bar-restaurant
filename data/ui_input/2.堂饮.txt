@@ -4,9 +4,26 @@ Canadian
 Coors Light
 Bud Light
 [shot]
+shot 6
+shot 7
+shot 8
+shot 9
+shot 10
 Vodka
 Whisky
 Rum
+Tequila
+Gin
+Apple Pie
+B52
+The Evil
 [cocktail]
+cocktail 6
+cocktail 8
+cocktail 10
+cocktail 12
+cocktail 15
 Rye Coke
 Vodka Special
+Vodka Orange
+Saeser

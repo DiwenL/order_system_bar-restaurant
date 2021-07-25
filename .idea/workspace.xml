@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="using menu list to create UI">
-      <change afterPath="$PROJECT_DIR$/data/ui_input/其他.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ui_input/堂饮.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ui_input/酒水外带.txt" afterDir="false" />
+    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="create UI completed">
+      <change afterPath="$PROJECT_DIR$/data/ui_input/6.披萨.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creat_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/creat_UI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receipt.py" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/creat_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ui_input/2.堂饮.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ui_input/2.堂饮.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ui_input/3.啤酒外带.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ui_input/3.啤酒外带.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +45,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Python.creat_UI">
-    <configuration name="creat_UI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="create_UI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="order_system_bar-restaurant" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -60,7 +60,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/creat_UI.py" />
+      <option name="SCRIPT_NAME" value="C:\coding\order_system_bar-restaurant\create_UI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -90,7 +90,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="order_system_bar-restaurant" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -102,9 +102,9 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/menu.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -155,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.creat_UI" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.create_UI" />
         <item itemvalue="Python.ui" />
         <item itemvalue="Python.order_system_UI" />
         <item itemvalue="Python.dbconnector" />
-        <item itemvalue="Python.menu" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627085450375</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="create UI completed">
+      <created>1627093859331</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1627093859331</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,6 +288,7 @@
     <MESSAGE value="main function" />
     <MESSAGE value="new way to make UI" />
     <MESSAGE value="using menu list to create UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="using menu list to create UI" />
+    <MESSAGE value="create UI completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="create UI completed" />
   </component>
 </project>
