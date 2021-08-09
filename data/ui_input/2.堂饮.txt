@@ -1,29 +1,56 @@
-[啤酒]
-Kokanee
-Canadian
-Coors Light
-Bud Light
+[Beer 啤酒]
+Kokanee|$6
+Canadian|$6
+Coors Light|$6
+Bud Light|$6
+Budweiser|$6
+Bohemian|$6
+Pilsner|$6
+Calgary|$6
+OV|$6
+Original16|$6.75
+Corona|$6.75
+Heineken|$6.75
+Miller GD|$6.75
+Miller HL|$6.75
+[Premake Cocktail 预调鸡尾酒]
+Twisted Tea|$6.75
+Vintage|$6.75
+Hey Yall|$6.75
+White Claw|$6.75
+Truly|$6.75
+Nutrl|$6.75
+O'Doul's|$6.75
+Big Rock|$6.75
+Plam Bay|$6.75
+Smirnoff|$6.75
+Mike's|$6.75
+Breezer|$6.75
+Tempo|$6.75
+Ultra|$6.75
+Smirnoff Tall|$8
+Rebellion|$8
 [shot]
-shot 6
-shot 7
-shot 8
-shot 9
-shot 10
-Vodka
-Whisky
-Rum
-Tequila
-Gin
-Apple Pie
-B52
-The Evil
-[cocktail]
-cocktail 6
-cocktail 8
-cocktail 10
-cocktail 12
-cocktail 15
-Rye Coke
-Vodka Special
-Vodka Orange
-Saeser
+shot 6|$6
+shot 7|$7
+shot 8|$8
+shot 9|$9
+shot 10|$10
+Vodka|$6
+Whisky|$6
+Rum$6
+Tequila|$6
+Gin|$6
+Apple Pie|$6
+B52|$6
+The Evil|$6
+[cocktail 鸡尾酒]
+cocktail 6|$6
+cocktail 8|$8
+cocktail 10|$10
+cocktail 12|$12
+cocktail 15|$15
+Rye Coke|$6
+Vodka Special|$6
+Vodka Orange|$6
+Saeser|$6

@@ -1,75 +1,73 @@
 [汤/小吃]
-云吞汤
-窝云吞
-饺子汤
-桂林米粉
-关东煮
-红豆汤圆
-芝麻汤圆
+云吞汤|Wonton Soup$8.5
+窝云吞|Wor Wonton$13.99
+桂林米粉|Guilin Noodle$12.99
+关东煮|Guandong Soup$12.99
 [炒饭/炒面/捞面/杂碎]
-鸡炒饭
-牛炒饭
-虾炒饭
-猪炒饭
-特殊炒饭
-鸡捞面
-牛捞面
-虾捞面
-猪捞面
-特殊捞面
-鸡炒面
-牛炒面
-虾炒面
-猪炒面
-特殊炒面
-鸡杂碎
-牛杂碎
-虾杂碎
-猪杂碎
-特殊杂碎
+鸡炒饭|Chicken Fried Rice$8.5
+牛炒饭|Beef Fried Rice$9.99
+虾炒饭|Shrimp Fired Rice$10.99
+猪炒饭|Pork Fried Rice$9.5
+特殊炒饭|Special Fried Rice$10.99
+鸡捞面|Chicken Lo Mein$11.99
+牛捞面|Beef Lo Mein$11.99
+虾捞面|Shrimp Lo Mein$11.99
+猪捞面|Pork Lo Mein$10.99
+特殊捞面|Special Lo Mein$11.99
+鸡炒面|Chicken Chow Mein$9.99
+牛炒面|Beef Chow Mein$10.99
+虾炒面|Shrimp Chow Mein$11.99
+猪炒面|Pork Chow Mein$10.99
+特殊炒面|Special Chow Mein$12.99
+鸡杂碎|Chicken Chop Suey$9.99
+牛杂碎|Beef Chop Suey$10.99
+虾杂碎|Shrimp Chop Suey$11.99
+猪杂碎|Pork Chop Suey$9.99
+特殊杂碎|Special Chop Suey$11.99
 [推荐]
-牛西兰
-牛杂菜
-鸡杂菜
-姜葱牛
-上海面
-新加坡面
-甜酸猪
-甜酸鸡
-炒杂菜
-四川牛
-四川猪
-椒盐鸡丝
-水煮牛
+牛西兰|Beef with Broccoli$11.99
+牛杂菜|Beef with Mixed Vegetables$11.99
+鸡杂菜|Chicken with Mixed Vegetables$10.99
+姜葱牛|Ginger Beef$13.99
+上海面|Shanghai Noodle$12.99
+新加坡面|Singapore Noodle$11.99
+甜酸猪|Sweet & Sour Pork$11.99
+甜酸鸡|Sweet & Sour Chicken$11.99
+炒杂菜|Vegetables$9.99
+四川牛|Sichuan Beef$12.99
+四川猪|Sichuan Pork$11.99
+椒盐鸡丝|Chicken Shredded with Pepper$13.99
+水煮牛|Hot Pot Beef$14.99
 [套餐]
-Combo A
-Combo B
-Combo C
-Combo D
-Combo 2
-Combo 3
-Combo 4
-Combo 5
-Combo 6
-Combo 8
+套餐 A|Combo A$15.99
+套餐 B|Combo B$15.59
+套餐 C|Combo C$14.99
+套餐 D|Combo D$15.59
+套餐 2|Combo 2$28.99
+套餐 3|Combo 3$39.99
+套餐 4|Combo 4$55.99
+套餐 5|Combo 5$68.99
+套餐 6|Combo 6$88.99
+套餐 8|Combo 8$109.99
 [披萨]
-13寸
-15寸
+12寸|12 inch$25.99
+15寸|15 inch$35.99
 [快餐]
-炸云吞
-炸薯条
-炸鸡块
-炸鸡翅
-布丁
-芝士条
-洋葱圈
-煎饺子
-鸡块薯条
-鸡球
-炸虾
-炸排骨
-白菜卷
-蛋卷2条
-蛋卷5条
-春卷1条
-春卷4条
+炸云吞|Deep Fried Wonton$10.99
+炸薯条|Fries$6.00
+炸鸡块|Chicken Tender$13.60
+炸鸡翅|Chicken Wing$9.99
+布丁|Poutine$8
+芝士条|Mozzarella Stick$8
+洋葱圈|Onion Rings$8
+煎饺子|Fried Dumpling$13.99
+鸡块薯条|Chicken Tender with Fries$13
+炸鱼薯条|Fish and Chips$14.99
+鸡球|Chicken Balls$11.99
+炸虾|Deep Fried Shrimp$13.5
+炸排骨|Deep Fried Ribs$11.99
+白菜卷|Chinese Cabbage Fritter$9.99
+蛋卷2条|Egg Roll 2pc$4.99
+蛋卷5条|Egg Roll 5pc$9
+春卷1条|Spring Roll 1pc$2.99
+春卷4条|Spring Roll 4pc$8.99

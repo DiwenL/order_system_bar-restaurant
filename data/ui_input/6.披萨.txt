@@ -1,6 +1,0 @@
-[中披萨]
-piza1
-piza2
-[大披萨]
-piza3
-piza4

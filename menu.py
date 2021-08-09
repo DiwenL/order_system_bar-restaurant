@@ -1,6 +1,6 @@
 """
-this modul is for getting the price from menu.txt and update the database
-if database not in enviroment, then using this modul as local database
+this module is for getting the price from menu.txt and update the database
+if database not in environment, then using this module as local database
 """
 
 import re
@@ -18,11 +18,6 @@ class Menu(object):
 
         self.tables_stat = {}
         self.menus = {}
-        self.menus_name = ["food", "drinkin", "wine", "pop", "cig", "other"]
-        self.offsale_menu = {}
-        for menu in self.menus_name:
-            self.tables_stat[menu] = False
-            self.menus[menu] = {}
         print("menu: start reading menu from input file")
         self.read_menu_file()
 
@@ -54,7 +49,7 @@ class Menu(object):
             except Exception as e:
                 print(e)
                 print("menu: price update FAIL\n")
-
+        print("database not in use")
         return
 
     def read_menu_file(self, path="") -> None:
@@ -63,31 +58,39 @@ class Menu(object):
         else:
             cwd = path
 
-        unidentified = []
+        path = cwd + "\\data\\ui_input\\"
 
-        for menu in self.menus_name:
+        files = os.listdir(path)
 
-            path = cwd + "\\data\\menu\\%s_menu.txt" % menu
+        for file in files:
+            menu_name = file.split('.')[1]
+            self.menus[menu_name] = {}
 
             # read file
             try:
-                with open(path, "r") as f:
-                    items = f.readlines()
+                with open(path + file, "r") as f:
+                    lines = f.readlines()
             except Exception as e:
-                print("menu: read %s_menu.txt error " % menu, e)
+                print(e)
 
             # get price
-            for item in items:
-                name,price,_ = re.split('[][]', item.split("\n")[0])
+            for line in lines:
+                line = line.splitlines()[0]
+                if line[0] == "[":
+                    current_kind = re.split('[][]',line)[1]
+                    self.menus[menu_name][current_kind] = {}
+                    continue
                 try:
-                    self.menus[menu][name] = float(price)
-                except Exception as e:
-                    unidentified.append(item)
-                    print("menu: unidentified [%s]: " % item, e)
+                    name_cn, name_en, price = re.split('[|$]', line)
+                except:
+                    temp = re.split('[$]',line)
+                    name_cn, name_en, price = temp[0], temp[0], temp[1]
 
-            print("menu: read [%s] completed." % menu)
+                self.menus[menu_name][current_kind][name_cn] = {}
+                self.menus[menu_name][current_kind][name_cn]["name_en"] = name_en
+                self.menus[menu_name][current_kind][name_cn]["price"] = price
 
-        print("[unidentified] item: %i\n" % len(unidentified))
+            print("menu: read [%s] completed." % file)
 
         return
 
@@ -98,7 +101,7 @@ class Menu(object):
             return
 
         for menu in self.menus_name:
-            try:  # check food menu
+            try:  # check menus
                 self.connection.cursor.execute("select * from %s" % menu)
                 self.tables_stat[menu] = True
                 print("[%s] table test SUCCESSFULLY" % menu)
@@ -142,7 +145,7 @@ class Menu(object):
                     for item in dif:
                         try:
                             self.connection.update_food(menu, item, dif[1])
-                            #self.connection.commit()
+                            self.connection.commit()
                             print("[%s] %.2f -> %.2f updated successfully" % (item, dif[item][0], dif[item][1]))
                         except Exception as e:
                             print("update [%s] FAIL: " % item, e)
@@ -152,34 +155,31 @@ class Menu(object):
                     for item in new:
                         try:
                             self.connection.insert_food(menu, item, new[item])
-                            #self.connection.commit()
+                            self.connection.commit()
                             print("new %s [%s] $%.2f updated successfully" % (menu, item, new[item]))
                         except Exception as e:
                             print("insert [%s] FAIL: " % item, e)
 
         return
 
-    def get_price(self, name, table) -> float:
-        if self.database_connection_stat and self.tables_stat[table]:
+    def get_price(self, name, kind) -> float:
+        if self.database_connection_stat:
             try:
-                price = self.connection.get_price(name, table)
+                price = self.connection.get_price(name, kind)
             except Exception as e:
-                print("menu: get price for [%s] from database [%s] FAIL: " % (name, table), e)
+                print("menu: get price for [%s] from database [%s] FAIL: " % (name, kind), e)
                 price = -1
             return price
-        else:
-            # using local menu data
-            try:
-                price = self.menus[table][name]
-            except Exception as e:
-                print("menu: get price for [%s] from local [%s] FAIL: " % (name, table), e)
-                price = -1
+        else:  # using local menu data
+            for menu in self.menus[kind]:
+                if name in self.menus[kind][menu]:
+                    price = float(self.menus[kind][menu][name]["price"])
+                    return price
+            print("menu: get price for [%s] from local [%s] FAIL" % (name, kind))
+            price = -1
             return price
-
-
 
 if __name__ == "__main__":
     print("executing MENU module main function")
     db = DBConnector("root", "lidiwen0513")
-    menu = Menu(db)
-    print(menu.database_connection_stat)
+    menu = Menu()

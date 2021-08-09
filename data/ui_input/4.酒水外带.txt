@@ -1,8 +1,0 @@
-[Vodka]
-375ml
-750ml
-1.14L
-1.44L
-[Wiser's]
-375ml
-750ml

@@ -1,0 +1,11 @@
+[Bottle]
+Kokanee_b|$6:22-24:69
+Canadian_b|$6:22-24:69
+Coors Light_b|$6:22-24:69
+[can]
+Kokanee_c|$6:18-24:59
+Canadian_c|$6:18-24:59
+Bud Light_c|$6:18-24:59
+[预调鸡尾酒]
+Twisted Tea_c|$6:20-12:38
+Vintage_c|$6:20-12:38
