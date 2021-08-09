@@ -1,0 +1,28 @@
+[Vodka]
+Smirnoff 375ml|$10
+Smirnoff 750ml|$10
+Smirnoff 1.14L|$10
+Smirnoff 1.75L|$10
+Polar Ice 1.14L|$10
+[Whisky]
+Wiser's 375ml|$10
+Wiser's 750ml|$10
+Wiser's 1.14L|$10
+Wiser's 1.75L|$10
+Jager 375ml|$10
+Jager 1.14L|$10
+Fireball 375ml|$10
+Fireball 750ml|$10
+Crown 750ml|$10
+Crown 1.14L|$10
+[Rum]
+Spiced 375ml|$10
+Dark 375ml|$10
+Spiced 750ml|$10
+Spiced 1.14L|$10
+Spiced 1.75L|$10
+Lamb 750ml|$10
+[Tequila]
+Jose 1.14L|$10
+Anejo 1.75L|$10
+1800 750ml|$10

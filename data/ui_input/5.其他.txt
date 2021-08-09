@@ -1,7 +1,7 @@
 [烟]
-Canadian Classic
-LD Bold
+Canadian Classic|$20
+LD Bold|$18
 [饮料]
-Pepsi
-Coke
-Clamato
+Pepsi|$2
+Coke|$2
+Clamato|$4

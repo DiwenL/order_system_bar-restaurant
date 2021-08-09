@@ -1,0 +1,11 @@
+[Bottle]
+Kokanee|$19
+Canadian|$19
+Coors Light|$19
+[can]
+Kokanee|$18
+Canadian|$18
+Bud Light|$18
+[预调鸡尾酒]
+Twisted Tea|$18
+Vintage|$18

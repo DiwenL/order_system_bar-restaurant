@@ -1,29 +1,32 @@
 [啤酒]
-Kokanee
-Canadian
-Coors Light
-Bud Light
+Kokanee|$6
+Canadian|$6
+Coors Light|$6
+Bud Light|$6
+[预调鸡尾酒]
+Twisted Tea|$18
+Vintage|$18
 [shot]
-shot 6
-shot 7
-shot 8
-shot 9
-shot 10
-Vodka
-Whisky
-Rum
-Tequila
-Gin
-Apple Pie
-B52
-The Evil
+shot 6|$6
+shot 7|$7
+shot 8|$8
+shot 9|$9
+shot 10|$10
+Vodka|$6
+Whisky|$6
+Rum$6
+Tequila|$6
+Gin|$6
+Apple Pie|$6
+B52|$6
+The Evil|$6
 [cocktail]
-cocktail 6
-cocktail 8
-cocktail 10
-cocktail 12
-cocktail 15
-Rye Coke
-Vodka Special
-Vodka Orange
-Saeser
+cocktail 6|$6
+cocktail 8|$8
+cocktail 10|$10
+cocktail 12|$12
+cocktail 15|$15
+Rye Coke|$6
+Vodka Special|$6
+Vodka Orange|$6
+Saeser|$6

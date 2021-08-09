@@ -3,6 +3,7 @@ import sys
 import os
 import time
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QColor
 
 class MainUI(object):
     def __init__(self):
@@ -28,22 +29,40 @@ class MainUI(object):
         self.tabWidget.setFont(self.font_list[28])
         self.tabWidget.setObjectName("tab_menu")
 
-
         self.tab_list = {}
         self.toolbox_list = {}
         self.page_list = {}
         self.btn_list = {}
 
         self.read_ui_design()
+
+        self.tab_names = self.design.keys()
+        self.color_list_str = ["rgb(255, 126, 0, 4"
+                               "0)", "rgb(255, 0, 125, 4"
+                                     "0)",
+                               "rgb(126, 255, 0, 4"
+                               "0)", "rgb(126, 0, 255, 4"
+                                     "0)",
+                               "rgb(0, 126, 255, 4"
+                               "0)", "rgb(0, 255, 126, 4"
+                                     "0)"]
+        self.colors_str = {}
+        idx = 0
+        for name in self.design.keys():
+            self.colors_str[name] = self.color_list_str[idx]
+            idx += 1
+
         self.create_menu()
 
         self.list_receipt = QtWidgets.QListWidget(self.MainWindow)
         self.list_receipt.setGeometry(QtCore.QRect(10, 100, 400, 800))
         self.list_receipt.setObjectName("list_receipt")
+        self.list_receipt.setFont(self.font_list[12])
 
         self.list_order = QtWidgets.QListWidget(self.MainWindow)
         self.list_order.setGeometry(QtCore.QRect(420, 100, 400, 800))
         self.list_order.setObjectName("list_order")
+        self.list_order.setFont(self.font_list[12])
 
         self.btn_exit = QtWidgets.QPushButton(self.MainWindow)
         self.btn_exit.setObjectName("btn_exit")
@@ -63,11 +82,11 @@ class MainUI(object):
         self.btn_beer_amount.setFont(self.font_list[18])
         self.btn_beer_amount.setText("数量")
 
-        self.btn_add = QtWidgets.QPushButton(self.MainWindow)
-        self.btn_add.setObjectName("btn_add")
-        self.btn_add.setGeometry(QtCore.QRect(10,0,200,100))
-        self.btn_add.setFont(self.font_list[18])
-        self.btn_add.setText("新建")
+        self.btn_new = QtWidgets.QPushButton(self.MainWindow)
+        self.btn_new.setObjectName("btn_add")
+        self.btn_new.setGeometry(QtCore.QRect(10,0,200,100))
+        self.btn_new.setFont(self.font_list[18])
+        self.btn_new.setText("新建")
 
         self.btn_delete = QtWidgets.QPushButton(self.MainWindow)
         self.btn_delete.setObjectName("btn_delete")
@@ -156,9 +175,9 @@ class MainUI(object):
             page = QtWidgets.QWidget()
             page.setGeometry(QtCore.QRect(0, 0, 1000, 405))
             page.setObjectName(page_name)
-
             toolbox.addItem(page, "")
             toolbox.setItemText(toolbox.indexOf(page),self.translate("MainWindow",page_name))
+
 
             self.page_list[tab_name][page_name] = page
             self.btn_list[tab_name][page_name] = {}
@@ -185,9 +204,11 @@ class MainUI(object):
             btn.setGeometry(QtCore.QRect(x, y, 200, 100))
             btn.setFont(self.font_list[14])
             btn.setObjectName(btn_name)
-            btn.setText(self.translate("MainWindow", btn_name))
+            btn.setText(btn_name)
             self.btn_list[tab_name][page_name][btn_name] = btn
 
+            stylesheet = "background-color:%s" % self.colors_str[tab_name]
+            btn.setStyleSheet(stylesheet)
             x += 200
             if x == 1000:
                 x = 0
@@ -212,7 +233,7 @@ class MainUI(object):
                     self.design[tab_name][page_name] = []
                     current_page = page_name
                 else:
-                    self.design[tab_name][current_page].append(line.split("\n")[0])
+                    self.design[tab_name][current_page].append(line.split("|")[0])
 
     def create_menu(self):
 
@@ -245,6 +266,7 @@ class MainUI(object):
                 btn.setGeometry(QtCore.QRect(x,y,150,100))
                 font = QtGui.QFont()
                 font.setPointSize(18)
+                font.setFamily("Microsoft JhengHei UI")
                 btn.setFont(font)
                 btn.setObjectName(favour)
                 btn.setText(favour)
@@ -267,7 +289,7 @@ class MainUI(object):
             return
 
         def create_amount_btns(self):
-            amount_list = ["6","9","12","18","21","24","36","48"]
+            amount_list = ["6", "12", "15", "18", "24", "48"]
             self.amount_btns = {}
             x = 0
             y = 0
@@ -276,6 +298,7 @@ class MainUI(object):
                 btn.setGeometry(QtCore.QRect(x,y,150,100))
                 font = QtGui.QFont()
                 font.setPointSize(18)
+                font.setFamily("Microsoft JhengHei UI")
                 btn.setFont(font)
                 btn.setObjectName(amount)
                 btn.setText(amount)
@@ -288,6 +311,69 @@ class MainUI(object):
 
         def show(self):
             self.BeerAmountWindow.show()
+
+    class InfoWindow(object):
+        def __init__(self):
+            super().__init__()
+            self.InfoWindow = QtWidgets.QMainWindow()
+            self.InfoWindow.setWindowTitle("顾客信息 Customer Infomation")
+            self.InfoWindow.resize(900,600)
+
+            font = QtGui.QFont()
+            font.setPointSize(18)
+            font.setFamily("Microsoft JhengHei UI")
+
+            self.label_customer_name = QtWidgets.QLabel(self.InfoWindow)
+            self.label_customer_name.setGeometry(QtCore.QRect(50,50,300,50))
+            self.label_customer_name.setText("名字 Name:")
+            self.label_customer_name.setFont(font)
+
+            self.label_customer_phone = QtWidgets.QLabel(self.InfoWindow)
+            self.label_customer_phone.setGeometry(QtCore.QRect(50,150,300,50))
+            self.label_customer_phone.setText("电话 Phone:")
+            self.label_customer_phone.setFont(font)
+
+            self.label_customer_time = QtWidgets.QLabel(self.InfoWindow)
+            self.label_customer_time.setGeometry(QtCore.QRect(50,250,300,50))
+            self.label_customer_time.setText("取餐时间 Time:")
+            self.label_customer_time.setFont(font)
+
+            self.text_name = QtWidgets.QLineEdit(self.InfoWindow)
+            self.text_name.setGeometry(QtCore.QRect(50,100,300,50))
+            self.text_name.setFont(font)
+
+            self.text_phone = QtWidgets.QLineEdit(self.InfoWindow)
+            self.text_phone.setGeometry(QtCore.QRect(50, 200, 300, 50))
+            self.text_phone.setFont(font)
+
+            self.text_time = QtWidgets.QLineEdit(self.InfoWindow)
+            self.text_time.setGeometry(QtCore.QRect(50, 300, 300, 50))
+            self.text_time.setFont(font)
+
+            self.text_search = QtWidgets.QLineEdit(self.InfoWindow)
+            self.text_search.setGeometry(QtCore.QRect(400,30,450,50))
+            self.text_search.setFont(font)
+
+            self.list_info = QtWidgets.QListWidget(self.InfoWindow)
+            self.list_info.setGeometry(QtCore.QRect(400,100,450,400))
+            self.list_info.setFont(font)
+
+            self.btn_add = QtWidgets.QPushButton(self.InfoWindow)
+            self.btn_add.setGeometry(QtCore.QRect(200,450,100,50))
+            self.btn_add.setText("添加")
+            self.btn_add.setFont(font)
+
+            self.btn_confirm = QtWidgets.QPushButton(self.InfoWindow)
+            self.btn_confirm.setGeometry(QtCore.QRect(50,450,100,50))
+            self.btn_confirm.setText("确定")
+            self.btn_confirm.setFont(font)
+            return
+
+        def close(self):
+            self.InfoWindow.close()
+
+        def show(self):
+            self.InfoWindow.show()
 
 if __name__ == "__main__":
     import sys
