@@ -4,6 +4,7 @@ import datetime
 import os
 import sys
 import re
+import math
 
 
 class Order(object):
@@ -13,29 +14,49 @@ class Order(object):
         self.__kind = kind
         self.__menu = menu
         self.__price = 0
-        self.set_price(price)
+        self.__price_range = None
         self.__amount = amount
-        self.__comment_list = comments
+        self.set_price(price)
+        self.__total = self.__price * self.__amount
+        self.__comment_list = []
 
     def get_total(self) -> float:
-        return self.__price * self.__amount
+        return self.__total
 
     def set_price(self, price) -> None:
         if price == -1:
             name = self.get_name()
             kind = self.get_kind()
-            self.__price = self.__menu.get_price(name, kind)
+            temp = self.__menu.get_price(name, kind)
+            if type(temp) == list:
+                self.__price_range = temp
+
+                if self.__amount < self.__price_range[0]:
+                    self.__amount = self.__price_range[0]
+
+                price_gradient = (self.__price_range[3] - self.__price_range[2]) / (
+                        self.__price_range[1] - self.__price_range[0])
+                self.__total = math.ceil(
+                    price_gradient * (self.__amount - self.__price_range[0]) + self.__price_range[2])
+                self.__price = self.__total / self.__amount
+            else:
+                self.__price = float(temp)
         else:
             self.__price = float(price)
         return
 
     def set_amount(self, amount) -> None:
         self.__amount = amount
-        return
+        if self.__price_range is None:
+            self.__total = self.__price * self.__amount
+        else:
+            self.set_price(-1)
 
-    def set_comment(self, comment_list) -> None:
-        for comment in comment_list:
-            self.__comment_list.append(comment)
+    def set_total(self, total) -> None:
+        self.__total = total
+
+    def add_comment(self, comment) -> None:
+        self.__comment_list.append(comment)
         return
 
     def get_kind(self):
@@ -62,7 +83,9 @@ class Order(object):
         return s
 
     def get_info(self):
-        s1 = "[%s] %ix %s" % (self.get_kind(),self.get_amount(), self.get_name())
-        s2 = "$%.2f" %  self.get_total()
+        s1 = "[%s] %ix %s" % (self.get_kind(), self.get_amount(), self.get_name())
+        s2 = "$%.2f" % self.get_total()
         s = s1.ljust(25) + s2.rjust(8)
+        for comment in self.__comment_list:
+            s += "\n                     -%s" % comment
         return s
