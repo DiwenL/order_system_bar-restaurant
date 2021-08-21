@@ -86,6 +86,12 @@ class Menu(object):
                     temp = re.split('[$]',line)
                     name_cn, name_en, price = temp[0], temp[0], temp[1]
 
+                try:
+                    float(price)
+                except:
+                    amount_low,  price_low, amount_high,price_high = re.split('[:-]',price)
+                    price = [int(amount_low), int(amount_high), float(price_low), float(price_high)]
+
                 self.menus[menu_name][current_kind][name_cn] = {}
                 self.menus[menu_name][current_kind][name_cn]["name_en"] = name_en
                 self.menus[menu_name][current_kind][name_cn]["price"] = price
@@ -162,7 +168,7 @@ class Menu(object):
 
         return
 
-    def get_price(self, name, kind) -> float:
+    def get_price(self, name, kind):
         if self.database_connection_stat:
             try:
                 price = self.connection.get_price(name, kind)
@@ -173,7 +179,7 @@ class Menu(object):
         else:  # using local menu data
             for menu in self.menus[kind]:
                 if name in self.menus[kind][menu]:
-                    price = float(self.menus[kind][menu][name]["price"])
+                    price = self.menus[kind][menu][name]["price"]
                     return price
             print("menu: get price for [%s] from local [%s] FAIL" % (name, kind))
             price = -1
