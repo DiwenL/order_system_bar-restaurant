@@ -4,223 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="complete UI design">
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#100.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#101.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#102.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#103.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#104.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#105.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#106.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#107.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#108.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#109.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#110.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#111.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#112.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#113.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#114.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#115.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#117.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#118.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#119.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#12.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#120.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#121.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#122.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#123.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#124.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#125.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#126.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#127.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#128.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#129.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#13.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#130.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#131.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#132.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#133.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#134.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#135.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#14.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#15.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#16.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#17.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#18.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#19.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#20.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#21.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#22.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#23.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#24.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#25.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#26.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#27.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#28.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#29.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#30.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#31.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#32.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#33.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#34.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#35.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#36.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#37.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#38.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#39.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#40.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#41.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#42.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#43.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#44.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#45.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#46.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#47.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#48.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#49.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#50.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#51.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#52.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#54.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#55.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#57.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#58.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#59.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#60.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#62.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#63.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#64.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#65.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#66.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#67.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#68.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#69.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#70.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#71.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#72.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#73.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#74.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#75.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#76.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#77.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#78.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#79.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#80.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#81.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#82.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#83.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#84.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#85.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#86.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#87.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#88.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#89.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#9.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#90.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#91.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#92.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#93.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#94.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#95.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#96.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#97.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#98.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-06/#99.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#12.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#13.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#14.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#15.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#16.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#17.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#18.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#19.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#20.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#21.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#22.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#23.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#24.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#25.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#26.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#27.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#28.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#29.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#30.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#31.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#32.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#33.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#34.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#35.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#36.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#37.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#38.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#39.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#40.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#41.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#42.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#43.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#44.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#45.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#46.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#47.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#48.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#49.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#50.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#51.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#52.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#53.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#54.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#55.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#56.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#57.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-07/#9.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#12.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#13.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#14.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#15.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#16.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#17.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/receipt/2021-08-08/#9.txt" afterDir="false" />
+    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="order class">
+      <change afterPath="$PROJECT_DIR$/运行系统.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/order_system_bar-restaurant.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/order_system_bar-restaurant.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_UI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ui_input/1.点餐.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ui_input/1.点餐.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ui_input/2.堂饮.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ui_input/2.堂饮.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ui_input/3.啤酒外带.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ui_input/3.酒外带.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ui_input/4.酒水外带.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ui_input/4.洋酒.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ui_input/5.其他.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/ui_input/5.其他.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ui_input/6.披萨.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order.py" beforeDir="false" afterPath="$PROJECT_DIR$/order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order_system_UI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order_system_UI.ui" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/receipt.py" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="pyconsole" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -296,6 +88,9 @@
       <module name="order_system_bar-restaurant" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -384,9 +179,9 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.create_UI" />
-        <item itemvalue="Python.receipt" />
         <item itemvalue="Python.menu" />
         <item itemvalue="Python.order" />
+        <item itemvalue="Python.receipt" />
       </list>
     </recent_temporary>
   </component>
@@ -497,7 +292,63 @@
       <option name="project" value="LOCAL" />
       <updated>1627185297882</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="completed receipts relate operation feature;&#10;customer information window;">
+      <created>1628485474348</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1628485474348</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update price input for gradient price">
+      <created>1629519220297</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1629519220297</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update price input for gradient price">
+      <created>1629519401844</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1629519401844</updated>
+    </task>
+    <task id="LOCAL-00018" summary="create UI for ordering, paying, customer info, favour selection">
+      <created>1629519720392</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1629519720392</updated>
+    </task>
+    <task id="LOCAL-00019" summary="random customer info">
+      <created>1629519800490</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1629519800490</updated>
+    </task>
+    <task id="LOCAL-00020" summary="main function, provide functions for UI">
+      <created>1629519871134</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1629519871134</updated>
+    </task>
+    <task id="LOCAL-00021" summary="read input menu file, function for database operation(not complete)">
+      <created>1629519938913</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1629519938913</updated>
+    </task>
+    <task id="LOCAL-00022" summary="order class">
+      <created>1629519964046</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1629519964046</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -524,6 +375,24 @@
     <MESSAGE value="using menu list to create UI" />
     <MESSAGE value="create UI completed" />
     <MESSAGE value="complete UI design" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete UI design" />
+    <MESSAGE value="completed receipts relate operation feature;&#10;customer information window;" />
+    <MESSAGE value="Update price input for gradient price" />
+    <MESSAGE value="create UI for ordering, paying, customer info, favour selection" />
+    <MESSAGE value="random customer info" />
+    <MESSAGE value="main function, provide functions for UI" />
+    <MESSAGE value="read input menu file, function for database operation(not complete)" />
+    <MESSAGE value="order class" />
+    <option name="LAST_COMMIT_MESSAGE" value="order class" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>411</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
