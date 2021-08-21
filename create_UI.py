@@ -4,6 +4,8 @@ import os
 import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QWidget
+
 
 class MainUI(object):
     def __init__(self):
@@ -81,6 +83,18 @@ class MainUI(object):
         self.btn_beer_amount.setGeometry(QtCore.QRect(820,200,100,100))
         self.btn_beer_amount.setFont(self.font_list[18])
         self.btn_beer_amount.setText("数量")
+
+        self.btn_delete_order = QtWidgets.QPushButton(self.MainWindow)
+        self.btn_delete_order.setObjectName("btn_beer_amount")
+        self.btn_delete_order.setGeometry(QtCore.QRect(820, 300, 100, 100))
+        self.btn_delete_order.setFont(self.font_list[18])
+        self.btn_delete_order.setText("删除")
+
+        self.btn_comment = QtWidgets.QPushButton(self.MainWindow)
+        self.btn_comment.setObjectName("btn_beer_amount")
+        self.btn_comment.setGeometry(QtCore.QRect(820, 400, 100, 100))
+        self.btn_comment.setFont(self.font_list[18])
+        self.btn_comment.setText("备注")
 
         self.btn_new = QtWidgets.QPushButton(self.MainWindow)
         self.btn_new.setObjectName("btn_add")
@@ -248,11 +262,14 @@ class MainUI(object):
 
         return
 
-    class FavourSelectionWindow(object):
+    def show(self):
+        self.MainWindow.show()
+
+    class FavourSelectionWindow(QWidget):
         def __init__(self):
             super().__init__()
             self.FavourSelectionWindow = QtWidgets.QMainWindow()
-            self.FavourSelectionWindow.setWindowTitle("酱")
+            self.FavourSelectionWindow.setWindowTitle("酱 Favours")
             self.FavourSelectionWindow.resize(600,400)
             return
 
@@ -280,11 +297,14 @@ class MainUI(object):
         def show(self):
             self.FavourSelectionWindow.show()
 
-    class BeerAmountWindow(object):
+        def close(self):
+            self.FavourSelectionWindow.close()
+
+    class BeerAmountWindow(QWidget):
         def __init__(self):
             super().__init__()
             self.BeerAmountWindow = QtWidgets.QMainWindow()
-            self.BeerAmountWindow.setWindowTitle("酱")
+            self.BeerAmountWindow.setWindowTitle("数量 Amount")
             self.BeerAmountWindow.resize(600,400)
             return
 
@@ -312,12 +332,18 @@ class MainUI(object):
         def show(self):
             self.BeerAmountWindow.show()
 
-    class InfoWindow(object):
+        def close(self):
+            self.BeerAmountWindow.close()
+
+    class InfoWindow(QWidget):
         def __init__(self):
             super().__init__()
+            self.file_path = os.getcwd() + "\\data\\customers.txt"
             self.InfoWindow = QtWidgets.QMainWindow()
             self.InfoWindow.setWindowTitle("顾客信息 Customer Infomation")
             self.InfoWindow.resize(900,600)
+
+            self.customers = {}
 
             font = QtGui.QFont()
             font.setPointSize(18)
@@ -345,10 +371,12 @@ class MainUI(object):
             self.text_phone = QtWidgets.QLineEdit(self.InfoWindow)
             self.text_phone.setGeometry(QtCore.QRect(50, 200, 300, 50))
             self.text_phone.setFont(font)
+            self.text_phone.setInputMask("(000)-000-0000;_")
 
             self.text_time = QtWidgets.QLineEdit(self.InfoWindow)
             self.text_time.setGeometry(QtCore.QRect(50, 300, 300, 50))
             self.text_time.setFont(font)
+            self.text_time.setInputMask("00:00")
 
             self.text_search = QtWidgets.QLineEdit(self.InfoWindow)
             self.text_search.setGeometry(QtCore.QRect(400,30,450,50))
@@ -375,19 +403,247 @@ class MainUI(object):
         def show(self):
             self.InfoWindow.show()
 
+        def search(self,temp):
+            result = {}
+
+            for name in self.customers:
+                if temp.lower() in name.lower():
+                    result[name] = self.customers[name]
+                    continue
+                for num in self.customers[name]:
+                    if temp in num:
+                        result[name] = self.customers[name]
+            return result
+
+        def add_customers(self, name, phone):
+            self.customers[name] = phone
+            self.list_info.addItem("%s\n(%s)-%s-%s" % (name, phone[0], phone[1], phone[2]))
+
+            with open(self.file_path,'w') as w:
+                names = list(self.customers.keys())
+                names.sort()
+                for name in names:
+                    phone = self.customers[name]
+                    w.write("%s:%s-%s-%s\n" % (name, phone[0], phone[1], phone[2]))
+
+        def read_customers(self):
+            with open(self.file_path,'r') as f:
+                lines = f.readlines()
+                f.close()
+            for line in lines:
+                name, phone = line.split("\n")[0].split(":")
+                self.customers[name] = phone.split("-")
+
+        def show_customers(self, temp=""):
+            self.read_customers()
+            self.list_info.clear()
+            if temp != "":
+                customers = self.search(temp)
+            else:
+                customers = self.customers
+            for customer in customers:
+                phone = self.customers[customer]
+                self.list_info.addItem("%s\n(%s)-%s-%s" % (customer, phone[0], phone[1], phone[2]))
+            return
+
+    class PayWindow(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.total = 0
+            self.unpaid = 0
+            self.PayWindow = QtWidgets.QMainWindow()
+            self.PayWindow.setWindowTitle("付款信息 Payment")
+            self.PayWindow.resize(600,600)
+
+            font = QtGui.QFont()
+            font.setPointSize(18)
+            font.setFamily("Microsoft JhengHei UI")
+
+            self.label_total_title = QtWidgets.QLabel(self.PayWindow)
+            self.label_total_title.setGeometry(QtCore.QRect(50, 30, 200, 50))
+            self.label_total_title.setText("总额 Total: ")
+            self.label_total_title.setFont(font)
+
+            self.label_total_amount = QtWidgets.QLabel(self.PayWindow)
+            self.label_total_amount.setGeometry(QtCore.QRect(353, 30, 150, 50))
+            self.label_total_amount.setText("$")
+            self.label_total_amount.setFont(font)
+
+            self.btn_cash = QtWidgets.QPushButton(self.PayWindow)
+            self.btn_cash.setGeometry(QtCore.QRect(50,100,150,50))
+            self.btn_cash.setText("现金 Cash")
+            self.btn_cash.setFont(font)
+            self.btn_cash.setCheckable(True)
+
+            self.btn_card = QtWidgets.QPushButton(self.PayWindow)
+            self.btn_card.setGeometry(QtCore.QRect(50, 170, 150, 50))
+            self.btn_card.setText("刷卡 Card")
+            self.btn_card.setFont(font)
+            self.btn_card.setCheckable(True)
+
+            self.btn_emt = QtWidgets.QPushButton(self.PayWindow)
+            self.btn_emt.setGeometry(QtCore.QRect(50, 240, 150, 50))
+            self.btn_emt.setText("E-transfer")
+            self.btn_emt.setFont(font)
+            self.btn_emt.setCheckable(True)
+
+            self.label_divided_line = QtWidgets.QLabel(self.PayWindow)
+            self.label_divided_line.setGeometry(QtCore.QRect(50, 300, 400, 50))
+            self.label_divided_line.setText("-------------------------------------")
+            self.label_divided_line.setFont(font)
+
+            self.label_unpaid_title = QtWidgets.QLabel(self.PayWindow)
+            self.label_unpaid_title.setGeometry(QtCore.QRect(50, 330, 400, 50))
+            self.label_unpaid_title.setText("未付款 Unpaid:")
+            self.label_unpaid_title.setFont(font)
+
+            self.label_unpaid_amount = QtWidgets.QLabel(self.PayWindow)
+            self.label_unpaid_amount.setGeometry(QtCore.QRect(353, 330, 400, 50))
+            self.label_unpaid_amount.setText("$")
+            self.label_unpaid_amount.setFont(font)
+
+            self.line_cash = QtWidgets.QLineEdit(self.PayWindow)
+            self.line_cash.setGeometry(350,100,150,50)
+            self.line_cash.setFont(font)
+            self.line_cash.setInputMask("$00.00")
+            self.line_cash.setVisible(False)
+
+            self.line_card = QtWidgets.QLineEdit(self.PayWindow)
+            self.line_card.setGeometry(350, 170, 150, 50)
+            self.line_card.setFont(font)
+            self.line_card.setInputMask("$00.00")
+            self.line_card.setVisible(False)
+
+            self.line_emt = QtWidgets.QLineEdit(self.PayWindow)
+            self.line_emt.setGeometry(350, 240, 150, 50)
+            self.line_emt.setFont(font)
+            self.line_emt.setInputMask("$00.00")
+            self.line_emt.setVisible(False)
+
+            self.btn_confirm = QtWidgets.QPushButton(self.PayWindow)
+            self.btn_confirm.setGeometry(60,420,210,100)
+            self.btn_confirm.setFont(font)
+            self.btn_confirm.setText("确认 Confirm")
+
+            self.btn_cancel = QtWidgets.QPushButton(self.PayWindow)
+            self.btn_cancel.setGeometry(330,420,210,100)
+            self.btn_cancel.setFont(font)
+            self.btn_cancel.setText("取消 Cancel")
+            return
+
+        def update_unpaid(self):
+            if self.line_cash.isVisible():
+                cash = self.line_cash.text().split("$")[1]
+                if cash == ".":
+                    cash = 0
+                else:
+                    cash = float(cash)
+            else:
+                cash = 0
+
+            if self.line_card.isVisible():
+                card = self.line_card.text().split("$")[1]
+                if card == ".":
+                    card = 0
+                else:
+                    card = float(card)
+            else:
+                card = 0
+
+            if self.line_emt.isVisible():
+                emt = self.line_emt.text().split("$")[1]
+                if emt == ".":
+                    emt = 0
+                else:
+                    emt = float(emt)
+            else:
+                emt = 0
+
+            self.unpaid = self.total - cash - card - emt
+            if self.unpaid < 0:
+                self.unpaid = 0
+            self.label_unpaid_amount.setText("$%.2f" % self.unpaid)
+
+        def set_context(self, total, unpaid, cash=0, card=0, emt=0):
+            if total >= 100:  # set input mask if total over $100
+                self.line_cash.setInputMask("$000.00")
+                self.line_card.setInputMask("$000.00")
+                self.line_emt.setInputMask("$000.00")
+
+            if cash != 0:
+                self.line_cash.setVisible(True)
+                self.btn_cash.setChecked(True)
+                self.line_cash.setText("%.2f" % cash)
+            else:
+                self.line_cash.setVisible(False)
+                self.btn_cash.setChecked(False)
+
+            if card != 0:
+                self.line_card.setVisible(True)
+                self.btn_card.setChecked(True)
+                self.line_card.setText("%.2f" % card)
+            else:
+                self.line_card.setVisible(False)
+                self.btn_card.setChecked(False)
+
+            if emt != 0:
+                self.line_emt.setVisible(True)
+                self.btn_emt.setChecked(True)
+                self.line_emt.setText("%.2f" % emt)
+            else:
+                self.line_emt.setVisible(False)
+                self.btn_emt.setChecked(False)
+
+            self.total = total
+            self.unpaid = unpaid
+            self.label_total_amount.setText("$%.2f" % total)
+            self.label_unpaid_amount.setText("$%.2f" % unpaid)
+
+        def show(self):
+            self.PayWindow.show()
+
+        def close(self):
+            if self.btn_cash.isChecked():
+                self.btn_cash.setChecked(False)
+            if self.btn_card.isChecked():
+                self.btn_card.setChecked(False)
+            if self.btn_emt.isChecked():
+                self.btn_emt.setChecked(False)
+            self.PayWindow.close()
+
+    class CommentWindow(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.CommentWindow = QtWidgets.QMainWindow()
+            self.CommentWindow.setWindowTitle("备注 Comment")
+            self.CommentWindow.resize(600,400)
+
+            font = QtGui.QFont()
+            font.setPointSize(18)
+            font.setFamily("Microsoft JhengHei UI")
+
+            self.line_comment = QtWidgets.QLineEdit(self.CommentWindow)
+            self.line_comment.setGeometry(QtCore.QRect(100,100,400,80))
+            self.line_comment.setFont(font)
+
+            self.btn_comment_confirm = QtWidgets.QPushButton(self.CommentWindow)
+            self.btn_comment_confirm.setGeometry(QtCore.QRect(200,250,200,100))
+            self.btn_comment_confirm.setFont(font)
+            self.btn_comment_confirm.setText("Confirm 确认")
+
+        def show(self):
+            self.CommentWindow.show()
+
+        def close(self):
+            self.CommentWindow.close()
+
+
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     ui = MainUI()
     ui.read_ui_design()
-
-    #ui.create_tabs(["点餐","酒水","其他"])
-    #ui.create_pages(["前菜","主食","肉食","蔬菜","汤类","套餐"],"点餐")
-    #ui.create_button(["蛋卷2条","蛋卷5条","春节1条","春卷5条"],"点餐","前菜")
-    #ui.create_button(["炒饭","炒面","捞面","上海面","新加坡面"],"点餐","主食")
-    #ui.create_button(["炒饭","炒面","捞面","上海面","新加坡面"],"点餐","主食")
-    #ui.create_pages(["啤酒","洋酒","预调鸡尾酒","调酒","a","b","c","d","e","f","g","h"],"酒水")
-    #ui.create_button(["Kokanee","Canadian","Bud Light"],"酒水","啤酒")
 
     ui.create_menu()
     ui.show()
