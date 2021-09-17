@@ -65,6 +65,9 @@ class Order(object):
     def get_price(self) -> float:
         return self.__price
 
+    def get_price_range(self):
+        return self.__price_range
+
     def get_name(self):
         return self.__name
 

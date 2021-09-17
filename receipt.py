@@ -17,6 +17,16 @@ class Receipt(object):
 
     def __init__(self, orders=[]) -> None:
         current_date = datetime.datetime.now().strftime('%Y-%m-%d')  # get today's date
+
+        current_hour = datetime.datetime.now().strftime('%H')  # get current hour
+        if int(current_hour) < 6:  # if after midnight, but still count as the same day
+            today = datetime.date.today()
+            oneday = datetime.timedelta(days=1)
+            yesterday = today - oneday
+            current_date = yesterday.strftime('%Y-%m-%d')
+        else:
+            current_date = datetime.datetime.now().strftime('%Y-%m-%d')
+
         self.__dataPath = ".\\data\\receipt\\%s\\" % current_date  # init today's data file path
 
         # create data path if not exist
@@ -42,10 +52,11 @@ class Receipt(object):
 
         self.receipt_dir = self.__dataPath + "\\" + "#" + str(self.__receipt_num) + ".txt"
         self.__orders = {}  # create order list
-        self.__info = {"name": "", "phone": "", "pickup": ""}
-        self.__payments = {"cash":0, "card":0, "emt":0}
+        self.__info = {"name": "", "phone": "", "pickup": "", "cashback": ""}
+        self.__payments = {"cash": 0, "card": 0, "emt": 0}
         self.__unpaid_amount = 0
         self.__paid_amount = 0
+        self.__cashback = 0
         self.__init_time = datetime.datetime.now().strftime('%H:%M:%S')
         self.__modify_time = datetime.datetime.now().strftime('%H:%M:%S')
         self.__total = 0
@@ -83,6 +94,12 @@ class Receipt(object):
         self.store_receipt()
         return
 
+    def set_cashback(self,amount):
+        self.__cashback = amount
+
+    def get_cashback(self):
+        return self.__cashback
+
     def add_order(self, order):
         kind = order.get_kind()
         self.__orders[kind].append(order)
@@ -111,30 +128,37 @@ class Receipt(object):
             f.write("init: %s\n" % self.__init_time)
             f.write("modify: %s\n" % current_time)
             f.write("#" + str(self.__receipt_num) + "\n")
+            f.write("=================\n")
 
             for kind in self.__orders:
-                f.write("[%s]\n" % kind)
+                if len(self.__orders[kind]) == 0:
+                    continue
+                s = ("[%s]" % kind).center(14, "-")
+                f.write(s + "\n")
                 for order in self.__orders[kind]:
-                    f.write("%sx%s\n" % (order.get_amount(),order.get_name()))
+                    f.write("(%sx) %s\n" % (order.get_amount(),order.get_name()))
 
                     comments = order.get_comments()
                     if comments:
                         for comment in comments:
                             f.write("     -" + comment + "\n")
 
-                    f.write("        $%.2f\n" % order.get_total())
+                    f.write("          $%.2f\n" % order.get_total())
             f.write("=================\n")
 
-            f.write("Total   $%.2f\n" % self.get_total())
+            f.write("Total     $%.2f\n" % self.get_total())
+
+            if self.__cashback != 0:
+                f.write("[CASHBACK]$%.2f\n" % self.__cashback)
 
             for info in self.__info:
                 if self.__info[info] != "":
                     f.write("%s : %s\n" % (info, self.__info[info]))
 
-            f.write("[PAID] $%.2f\n" % self.get_paid_amount())
+            f.write("[PAID]    $%.2f\n" % self.get_paid_amount())
 
             if self.get_unpaid_amount() >= 0.01:
-                f.write("[UNPAID] $%.2f\n" % self.get_unpaid_amount())
+                f.write("[UNPAID]  $%.2f\n" % self.get_unpaid_amount())
 
             for payment in self.__payments:
                 if self.__payments[payment] != 0:
@@ -193,14 +217,14 @@ class Receipt(object):
             for idx2 in range(len(self.__orders[kind])):
                 if idx1 == order_idx:
                     self.__orders[kind].pop(idx2)
-                    print("delete success")
                     return
                 idx1 += 1
         self.store_receipt()
 
-    def __del__(self):
+    def delete_file(self):
         if os.path.exists(self.receipt_dir):
             os.remove(self.receipt_dir)
+            print("current receipt #%i removed from dir" % self.__receipt_num)
         return
 
 

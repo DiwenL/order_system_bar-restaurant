@@ -38,6 +38,7 @@ class Main(QMainWindow, MainUI):
         self.pwindow.btn_cash.toggled.connect(self.btn_cash_toggled)
         self.pwindow.btn_card.toggled.connect(self.btn_card_toggled)
         self.pwindow.btn_emt.toggled.connect(self.btn_emt_toggled)
+        self.pwindow.btn_cashback.clicked.connect(self.btn_cashback_toggled)
         self.pwindow.line_cash.textChanged.connect(self.pwindow.update_unpaid)
         self.pwindow.line_card.textChanged.connect(self.pwindow.update_unpaid)
         self.pwindow.line_emt.textChanged.connect(self.pwindow.update_unpaid)
@@ -70,9 +71,24 @@ class Main(QMainWindow, MainUI):
         self.list_receipt.clicked.connect(self.list_receipt_clicked)
 
         self.tab_names = self.design.keys()
-        self.color_list = [QColor(255, 126, 0, 40),QColor(255, 0, 125, 40),
-                           QColor(126, 255, 0, 40),QColor(126, 0, 255, 40),
-                           QColor(0, 126, 255, 40),QColor(0, 255, 126, 40)]
+
+        try:
+            cwd = os.getcwd()
+            with open(cwd + "/data/init.txt") as f:
+                lines = f.readlines()
+            for line in lines:
+                if "菜单颜色" in line:
+                    line = line.split(":")[1]
+                    colors = re.split("[|]", line)
+                    self.color_list = []
+                    for color in colors:
+                        _, a, b, c, d, _ = re.split("[(,)]", color)
+                        self.color_list.append(QColor(int(a),int(b),int(c),int(d)))
+        except Exception as e:
+            print(e)
+            self.color_list = [QColor(255, 126, 0, 40),QColor(255, 0, 125, 40),
+                               QColor(126, 255, 0, 40),QColor(126, 0, 255, 40),
+                               QColor(0, 126, 255, 40),QColor(0, 255, 126, 40)]
         self.colors = {}
         idx = 0
         for name in self.design.keys():
@@ -149,6 +165,8 @@ class Main(QMainWindow, MainUI):
             phone = self.iwindow.text_phone.text()
             time = self.iwindow.text_time.text()
 
+            if phone == "()--":
+                phone = ""
             self.update_current_selected()
             if self.current_receipt_idx == -1:
                 return
@@ -199,6 +217,14 @@ class Main(QMainWindow, MainUI):
             self.pwindow.line_emt.setVisible(True)
             self.pwindow.line_emt.setText("$%.2f" % self.pwindow.unpaid)
 
+    def btn_cashback_toggled(self):
+        if self.pwindow.line_cashback.isVisible():
+            self.pwindow.line_cashback.setVisible(False)
+            self.pwindow.line_cashback.setText("$")
+        else:
+            self.pwindow.line_cashback.setVisible(True)
+            self.pwindow.line_cashback.setText("")
+
     def btn_pay_confirm_clicked(self):
         self.update_current_selected()
         if self.current_receipt_idx == -1:
@@ -231,15 +257,24 @@ class Main(QMainWindow, MainUI):
         else:
             emt = 0
 
+        if self.pwindow.line_cashback.isVisible():
+            cashback = self.pwindow.line_cashback.text().split("$")[1]
+            if cashback == ".":
+                cashback = 0
+            else:
+                cashback = float(cashback)
+        else:
+            cashback = 0
+
         self.pwindow.unpaid = self.pwindow.total - cash - card - emt
         self.current_receipt.set_payments(cash, card, emt)
+        self.current_receipt.set_cashback(cashback)
         self.update_receipt(self.current_receipt_idx)
 
         if self.pwindow.unpaid >= 0.01:
-            self.iwindow.show()
+            self.btn_info_clicked()
 
         self.pwindow.close()
-        print(self.current_receipt.get_payments())
         return
 
     def add_order(self,name,kind):
@@ -252,6 +287,16 @@ class Main(QMainWindow, MainUI):
             od = Order(name,kind,self.menu)
             self.current_receipt.add_order(od)
             self.show_receipt(self.current_receipt)
+            order_list = self.current_receipt.get_orders()
+            count = 0
+            for k in order_list:
+                count += len(order_list[k])
+                if k == kind:
+                    break
+
+            self.list_order.setCurrentRow(count - 1)
+            if od.get_price_range() is not None:
+                self.bwindow.show()
         except Exception as e:
             print(e)
         self.update_receipt(self.current_receipt_idx)
@@ -339,13 +384,22 @@ class Main(QMainWindow, MainUI):
         return
 
     def btn_delete_clicked(self):
+        try:
+            reply = QMessageBox.question(self, "Delete 删除该单", "Confirm Delete?\n确认删除？", QMessageBox.Yes | QMessageBox.No,
+                                         QMessageBox.Yes)
+        except Exception as e:
+            print(e)
+
+        if reply == QMessageBox.No:
+            return
+
         if self.list_receipt.count() == 0:  # if current no receipt
             return
         try:
             self.update_current_selected()  # update current receipt & order selected
             receipt = self.unfinished_receipts.pop(self.current_receipt_idx)  # pop receipt from list
             self.list_receipt.takeItem(self.current_receipt_idx)  # take receipt from UI
-            del receipt
+            receipt.delete_file()
             count = self.list_receipt.count()
                     
             if count == 0:  # if no receipt after delete
@@ -384,6 +438,19 @@ class Main(QMainWindow, MainUI):
         self.update_current_selected()
         if self.current_receipt_idx == -1:
             return
+        if self.current_receipt.get_unpaid_amount() >= 0.01:
+            try:
+                reply = QMessageBox.question(self, "Complete 完成该单", "Current receipt still unpaid\n该单仍有未付款，确认完成?", QMessageBox.Yes | QMessageBox.No,
+                                             QMessageBox.Yes)
+            except Exception as e:
+                print(e)
+
+            if reply == QMessageBox.No:
+                return
+
+        self.update_current_selected()
+        if self.current_receipt_idx == -1:
+            return
 
         try:
             self.finished_receipts.append(self.unfinished_receipts.pop(self.current_receipt_idx))
@@ -405,7 +472,8 @@ class Main(QMainWindow, MainUI):
             payments = self.current_receipt.get_payments()
             total = self.current_receipt.get_total()
             unpaid = self.current_receipt.get_unpaid_amount()
-            self.pwindow.set_context(total, unpaid, payments["cash"], payments["card"], payments["emt"])
+            cashback = self.current_receipt.get_cashback()
+            self.pwindow.set_context(total, unpaid, payments["cash"], payments["card"], payments["emt"], cashback)
             print("Current total$%.2f unpaid$%.2f" % (self.pwindow.total, self.pwindow.unpaid))
             self.pwindow.show()
 

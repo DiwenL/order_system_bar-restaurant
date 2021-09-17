@@ -4,15 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="order class">
-      <change afterPath="$PROJECT_DIR$/运行系统.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/order_system_bar-restaurant.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/order_system_bar-restaurant.iml" afterDir="false" />
+    <list default="true" id="9fb64d48-b2c2-4868-87de-95fa4e67c518" name="Default Changelist" comment="_">
+      <change afterPath="$PROJECT_DIR$/data/init.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-01/#1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-02/#1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#12.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#13.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#16.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-05/#9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-08/#1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-08/#2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-08/#3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-08/#4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-08/#5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-08/#6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-11/#1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-16/#3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-16/#4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-16/#5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-16/#6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-16/#7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-16/#8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/receipt/2021-09-16/#9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/summary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_system_UI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_system_UI.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order.py" beforeDir="false" afterPath="$PROJECT_DIR$/order.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/receipt.py" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,9 +117,6 @@
       <module name="order_system_bar-restaurant" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -147,7 +173,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="receipt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="summary" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="order_system_bar-restaurant" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -159,9 +185,9 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/receipt.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/summary.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -173,15 +199,15 @@
       <item itemvalue="Python.main" />
       <item itemvalue="Python.menu" />
       <item itemvalue="Python.order" />
-      <item itemvalue="Python.receipt" />
+      <item itemvalue="Python.summary" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.summary" />
         <item itemvalue="Python.create_UI" />
         <item itemvalue="Python.menu" />
         <item itemvalue="Python.order" />
-        <item itemvalue="Python.receipt" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +374,28 @@
       <option name="project" value="LOCAL" />
       <updated>1629519964046</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="not using">
+      <created>1629520011580</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1629520011580</updated>
+    </task>
+    <task id="LOCAL-00024" summary="receipt class">
+      <created>1629520030860</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1629520030860</updated>
+    </task>
+    <task id="LOCAL-00025" summary="_">
+      <created>1629520068204</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1629520068204</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -382,17 +429,9 @@
     <MESSAGE value="main function, provide functions for UI" />
     <MESSAGE value="read input menu file, function for database operation(not complete)" />
     <MESSAGE value="order class" />
-    <option name="LAST_COMMIT_MESSAGE" value="order class" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>411</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="not using" />
+    <MESSAGE value="receipt class" />
+    <MESSAGE value="_" />
+    <option name="LAST_COMMIT_MESSAGE" value="_" />
   </component>
 </project>
