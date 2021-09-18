@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import QWidget
 from PyQt5.QtCore import QSize
 import qtawesome as qta
 
+
 class MainUI(object):
     def __init__(self):
         self.MainWindow = QtWidgets.QMainWindow()
@@ -31,16 +32,26 @@ class MainUI(object):
         self.tabWidget.setGeometry(QtCore.QRect(920, 20, 1000, 9800))  # set tab widget size
         self.tabWidget.setFont(self.font_list[28])
         self.tabWidget.setObjectName("tab_menu")
-        self.tabWidget.setStyleSheet('''QTabWidget::pane{border-top: 1px solid;
+        self.tabWidget.setStyleSheet('''QTabWidget::pane{
+                                                         border-top: 4px dotted;
                                                          position: absolute;
                                                          top: -1.5em} 
-                                        QTabWidget::tab-bar{alignment: center;}
-                                        QTabBar::tab{background: azure;
+                                        QTabWidget::tab-bar{
+                                                            alignment: center;}
+                                        QTabBar::tab{
+                                                     background: azure;
                                                      min-width: 150px;
-                                                     text-align:center;
-                                                     border-left: 1px solid;
-                                                     border-right: 1px solid;
-                                                     border-top: 1px solid}''')
+                                                     text-align:center;}
+                                        QTabBar::tab:selected{
+                                                     border-top: 2px solid;
+                                                     border-left: 2px solid;
+                                                     border-right: 2px solid;
+                                                     border-bottom: none}
+                                        QTabBar::tab:!selected{
+                                                     border-bottom: 2px solid;
+                                                     border-top: none;
+                                                     border-left: none;
+                                                     border-right: none;}''')
 
         self.tab_list = {}
         self.toolbox_list = {}
@@ -53,7 +64,7 @@ class MainUI(object):
 
         try:
             cwd = os.getcwd()
-            with open(cwd + "/data/init.txt") as f:
+            with open(cwd + "/data/init.txt", encoding='utf-8') as f:
                 lines = f.readlines()
             for line in lines:
                 if "菜单颜色" in line:
@@ -78,41 +89,69 @@ class MainUI(object):
         self.create_menu()
 
         self.list_receipt = QtWidgets.QListWidget(self.MainWindow)
-        self.list_receipt.setGeometry(QtCore.QRect(10, 100, 400, 800))
+        self.list_receipt.setGeometry(QtCore.QRect(20, 100, 400, 800))
         self.list_receipt.setObjectName("list_receipt")
         self.list_receipt.setFont(self.font_list[12])
+        self.list_receipt.setStyleSheet('''QListView{background: azure;
+                                                     border: none;}
+                                           QListView::item{
+                                                     color: black;
+                                                     min-height: 100px;
+                                                     text-align: right;
+                                                     border:none}
+                                           QListView::item:selected{
+                                                     border-left: 2px solid;
+                                                     border-top: 2px solid;
+                                                     border-bottom: 2px solid;
+                                                     border-top-left-radius: 20px;
+                                                     border-bottom-left-radius: 20px;
+                                                     border-right: none;
+                                                     background: azure;
+                                                     }
+                                           QListView::item:!selected{
+                                                     border-right: 2px solid;
+                                                     }
+                                           QListView::item:selected:active{
+                                                     border-right: none;}
+                                           QListView::item:selected!:active{
+                                                     border-right: none}''')
 
         self.list_order = QtWidgets.QListWidget(self.MainWindow)
         self.list_order.setGeometry(QtCore.QRect(420, 100, 400, 800))
         self.list_order.setObjectName("list_order")
         self.list_order.setFont(self.font_list[12])
+        self.list_order.setStyleSheet('''QListView{background: azure;
+                                                   border: none;
+                                                   border-right: 2px solid}
+                                         QListView::item{
+                                                   min-height: 100px;}''')
 
         self.btn_exit = QtWidgets.QPushButton(self.MainWindow)
         self.btn_exit.setObjectName("btn_exit")
-        self.btn_exit.setGeometry(QtCore.QRect(1770,1000,150,80))
+        self.btn_exit.setGeometry(QtCore.QRect(1770, 1000, 150, 80))
         self.btn_exit.setFont(self.font_list[18])
         self.btn_exit.setText("EXIT")
         self.btn_exit.setStyleSheet('''QPushButton{border: none; color: none}''')
 
         self.btn_favour = QtWidgets.QPushButton(self.MainWindow)
         self.btn_favour.setObjectName("btn_favour")
-        self.btn_favour.setGeometry(QtCore.QRect(820,100,100,100))
+        self.btn_favour.setGeometry(QtCore.QRect(820, 100, 100, 100))
         self.btn_favour.setFont(self.font_list[18])
         self.btn_favour.setText("酱")
         self.btn_favour.setStyleSheet('''QPushButton{padding-top:40px;
                                                      border: none;
                                                      color: none;
-                                                     border-bottom: 1px solid;}''')
+                                                     border-bottom: 2px solid;}''')
 
         self.btn_beer_amount = QtWidgets.QPushButton(self.MainWindow)
         self.btn_beer_amount.setObjectName("btn_beer_amount")
-        self.btn_beer_amount.setGeometry(QtCore.QRect(820,200,100,100))
+        self.btn_beer_amount.setGeometry(QtCore.QRect(820, 200, 100, 100))
         self.btn_beer_amount.setFont(self.font_list[18])
         self.btn_beer_amount.setText("数量")
         self.btn_beer_amount.setStyleSheet('''QPushButton{padding-top:40px;
                                                           border: none;
                                                           color: none;
-                                                          border-bottom: 1px solid;}''')
+                                                          border-bottom: 2px solid;}''')
 
         self.btn_delete_order = QtWidgets.QPushButton(self.MainWindow)
         self.btn_delete_order.setObjectName("btn_beer_amount")
@@ -122,7 +161,7 @@ class MainUI(object):
         self.btn_delete_order.setStyleSheet('''QPushButton{padding-top:40px;
                                                            border: none;
                                                            color: none;
-                                                           border-bottom: 1px solid;}''')
+                                                           border-bottom: 2px solid;}''')
 
         self.btn_comment = QtWidgets.QPushButton(self.MainWindow)
         self.btn_comment.setObjectName("btn_beer_amount")
@@ -132,20 +171,20 @@ class MainUI(object):
         self.btn_comment.setStyleSheet('''QPushButton{padding-top:40px;
                                                       border: none;
                                                       color: none;
-                                                      border-bottom: 1px solid;}''')
+                                                      border-bottom: 2px solid;}''')
 
         self.btn_new = QtWidgets.QPushButton(self.MainWindow)
         self.btn_new.setObjectName("btn_add")
-        self.btn_new.setGeometry(QtCore.QRect(10,0,200,100))
+        self.btn_new.setGeometry(QtCore.QRect(10, 0, 200, 100))
         self.btn_new.setFont(self.font_list[18])
         self.btn_new.setText("新建")
         self.btn_new.setStyleSheet('''QPushButton{border: none; color: none;}''')
-        self.btn_new.setIcon(qta.icon("fa.plus-square-o",color="black"))
-        self.btn_new.setIconSize(QSize(40,40))
+        self.btn_new.setIcon(qta.icon("fa.plus-square-o", color="black"))
+        self.btn_new.setIconSize(QSize(40, 40))
 
         self.btn_delete = QtWidgets.QPushButton(self.MainWindow)
         self.btn_delete.setObjectName("btn_delete")
-        self.btn_delete.setGeometry(QtCore.QRect(210,0,200,100))
+        self.btn_delete.setGeometry(QtCore.QRect(210, 0, 200, 100))
         self.btn_delete.setFont(self.font_list[18])
         self.btn_delete.setText("删除")
         self.btn_delete.setStyleSheet('''QPushButton{border: none; color: none}''')
@@ -154,7 +193,7 @@ class MainUI(object):
 
         self.btn_info = QtWidgets.QPushButton(self.MainWindow)
         self.btn_info.setObjectName("btn_info")
-        self.btn_info.setGeometry(QtCore.QRect(420,0,200,100))
+        self.btn_info.setGeometry(QtCore.QRect(420, 0, 200, 100))
         self.btn_info.setFont(self.font_list[18])
         self.btn_info.setText("信息")
         self.btn_info.setStyleSheet('''QPushButton{border: none; color: none}''')
@@ -163,7 +202,7 @@ class MainUI(object):
 
         self.btn_print = QtWidgets.QPushButton(self.MainWindow)
         self.btn_print.setObjectName("btn_print")
-        self.btn_print.setGeometry(QtCore.QRect(620,0,200,100))
+        self.btn_print.setGeometry(QtCore.QRect(620, 0, 200, 100))
         self.btn_print.setFont(self.font_list[18])
         self.btn_print.setText("打印")
         self.btn_print.setStyleSheet('''QPushButton{border: none; color: none}''')
@@ -193,21 +232,21 @@ class MainUI(object):
         self.btn_amount_plus.setGeometry(QtCore.QRect(420, 900, 100, 100))
         self.btn_amount_plus.setFont(self.font_list[18])
         self.btn_amount_plus.setText("+")
-        self.btn_amount_plus.setStyleSheet('''QPushButton{border: none; color: none; border-right: 1px solid}''')
+        self.btn_amount_plus.setStyleSheet('''QPushButton{border: none; color: none; border-right: 2px solid}''')
 
         self.btn_price_plus = QtWidgets.QPushButton(self.MainWindow)
         self.btn_price_plus.setObjectName("btn_price_plus")
         self.btn_price_plus.setGeometry(QtCore.QRect(520, 900, 100, 100))
         self.btn_price_plus.setFont(self.font_list[18])
         self.btn_price_plus.setText("$↑")
-        self.btn_price_plus.setStyleSheet('''QPushButton{border: none; color: none; border-right: 1px solid}''')
+        self.btn_price_plus.setStyleSheet('''QPushButton{border: none; color: none; border-right: 2px solid}''')
 
         self.btn_price_minus = QtWidgets.QPushButton(self.MainWindow)
         self.btn_price_minus.setObjectName("btn_price_minus")
         self.btn_price_minus.setGeometry(QtCore.QRect(620, 900, 100, 100))
         self.btn_price_minus.setFont(self.font_list[18])
         self.btn_price_minus.setText("$↓")
-        self.btn_price_minus.setStyleSheet('''QPushButton{border: none; color: none; border-right: 1px solid}''')
+        self.btn_price_minus.setStyleSheet('''QPushButton{border: none; color: none; border-right: 2px solid}''')
 
         self.btn_amount_minus = QtWidgets.QPushButton(self.MainWindow)
         self.btn_amount_minus.setObjectName("btn_amount_minus")
@@ -221,14 +260,20 @@ class MainUI(object):
             tab = QtWidgets.QWidget()
             tab.setObjectName("tab_%s" % tab_name)
             self.tabWidget.addTab(tab, "")
-            self.tabWidget.setTabText(self.tabWidget.indexOf(tab), self.translate("MainWindow","%s" % tab_name))
-
+            self.tabWidget.setTabText(self.tabWidget.indexOf(tab), self.translate("MainWindow", "%s" % tab_name))
 
             toolbox = QtWidgets.QToolBox(tab)
             toolbox.setGeometry(QtCore.QRect(0, 50, 1000, 850))
             toolbox.setFont(self.font_list[28])
             toolbox.setObjectName("toolbox_%s" % tab_name)
-            toolbox.setStyleSheet('''QToolBox::tab{background: azure; border-left:2px solid; border-radius: 8px}''')
+            toolbox.setStyleSheet('''QToolBox::tab{
+                                                   background: azure; 
+                                                   border-left: 2px solid;}
+                                     QToolBox::tab:selected{
+                                                            border-bottom: 2px solid;
+                                                            border-top: 2px solid;
+                                                            border-top-left-radius: 30px;
+                                                            border-bottom-left-radius: 30px;}''')
 
             self.tab_list[tab_name] = tab
             self.toolbox_list[tab_name] = toolbox
@@ -253,8 +298,7 @@ class MainUI(object):
             page.setObjectName(page_name)
             page.setStyleSheet('''QWidget{background: azure}''')
             toolbox.addItem(page, "")
-            toolbox.setItemText(toolbox.indexOf(page),self.translate("MainWindow",page_name))
-
+            toolbox.setItemText(toolbox.indexOf(page), self.translate("MainWindow", page_name))
 
             self.page_list[tab_name][page_name] = page
             self.btn_list[tab_name][page_name] = {}
@@ -284,7 +328,7 @@ class MainUI(object):
             btn.setText(btn_name)
             self.btn_list[tab_name][page_name][btn_name] = btn
 
-            stylesheet = "border-radius: 10px;border: 1px solid; background-color:%s" % self.colors_str[tab_name]
+            stylesheet = "border-radius: 10px; border: 2px solid; background-color:%s" % self.colors_str[tab_name]
             btn.setStyleSheet(stylesheet)
             x += 200
             if x == 1005:
@@ -300,7 +344,7 @@ class MainUI(object):
         for tab_file in tab_list:
             tab_name = re.split('[.]', tab_file)[1]
             self.design[tab_name] = {}
-            with open (ui_input_path+tab_file, 'r') as f:  # read data from file
+            with open(ui_input_path + tab_file, 'r', encoding='utf-8') as f:  # read data from file
                 data = f.readlines()
                 f.close()
 
@@ -332,13 +376,13 @@ class MainUI(object):
             self.favour_btns = {}
             self.FavourSelectionWindow = QtWidgets.QMainWindow()
             self.FavourSelectionWindow.setWindowTitle("酱 Favours")
-            self.FavourSelectionWindow.resize(600,400)
+            self.FavourSelectionWindow.resize(600, 400)
             return
 
         def create_favour_btns(self):
             try:
                 cwd = os.getcwd()
-                with open(cwd + "/data/init.txt") as f:
+                with open(cwd + "/data/init.txt",encoding='utf-8') as f:
                     lines = f.readlines()
                 for line in lines:
                     if "酱料" in line:
@@ -346,13 +390,13 @@ class MainUI(object):
                         favour_list = favours[1:]
             except Exception as e:
                 print(e)
-                favour_list = ["酸甜","椒盐","buffalo","辣酱","ranch","甜辣","蜂蜜","柠檬辣椒","greek"]
+                favour_list = ["酸甜", "椒盐", "buffalo", "辣酱", "ranch", "甜辣", "蜂蜜", "柠檬辣椒", "greek"]
 
             x = 0
             y = 0
             for favour in favour_list:
                 btn = QtWidgets.QPushButton(self.FavourSelectionWindow)
-                btn.setGeometry(QtCore.QRect(x,y,150,100))
+                btn.setGeometry(QtCore.QRect(x, y, 150, 100))
                 font = QtGui.QFont()
                 font.setPointSize(18)
                 font.setFamily("Microsoft JhengHei UI")
@@ -378,14 +422,14 @@ class MainUI(object):
             self.amount_btns = {}
             self.BeerAmountWindow = QtWidgets.QMainWindow()
             self.BeerAmountWindow.setWindowTitle("数量 Amount")
-            self.BeerAmountWindow.resize(600,400)
+            self.BeerAmountWindow.resize(600, 400)
             self.BeerAmountWindow.setWindowFlag(QtCore.Qt.WindowStaysOnTopHint)
             return
 
         def create_amount_btns(self):
             try:
                 cwd = os.getcwd()
-                with open(cwd + "/data/init.txt") as f:
+                with open(cwd + "/data/init.txt",encoding='utf-8') as f:
                     lines = f.readlines()
                 for line in lines:
                     if "数量" in line:
@@ -399,7 +443,7 @@ class MainUI(object):
             y = 0
             for amount in amount_list:
                 btn = QtWidgets.QPushButton(self.BeerAmountWindow)
-                btn.setGeometry(QtCore.QRect(x,y,150,100))
+                btn.setGeometry(QtCore.QRect(x, y, 150, 100))
                 font = QtGui.QFont()
                 font.setPointSize(18)
                 font.setFamily("Microsoft JhengHei UI")
@@ -425,7 +469,7 @@ class MainUI(object):
             self.file_path = os.getcwd() + "\\data\\customers.txt"
             self.InfoWindow = QtWidgets.QMainWindow()
             self.InfoWindow.setWindowTitle("顾客信息 Customer Infomation")
-            self.InfoWindow.resize(900,600)
+            self.InfoWindow.resize(900, 600)
             self.InfoWindow.setWindowFlag(QtCore.Qt.WindowStaysOnTopHint)
 
             self.customers = {}
@@ -435,22 +479,22 @@ class MainUI(object):
             font.setFamily("Microsoft JhengHei UI")
 
             self.label_customer_name = QtWidgets.QLabel(self.InfoWindow)
-            self.label_customer_name.setGeometry(QtCore.QRect(50,50,300,50))
+            self.label_customer_name.setGeometry(QtCore.QRect(50, 50, 300, 50))
             self.label_customer_name.setText("名字 Name:")
             self.label_customer_name.setFont(font)
 
             self.label_customer_phone = QtWidgets.QLabel(self.InfoWindow)
-            self.label_customer_phone.setGeometry(QtCore.QRect(50,150,300,50))
+            self.label_customer_phone.setGeometry(QtCore.QRect(50, 150, 300, 50))
             self.label_customer_phone.setText("电话 Phone:")
             self.label_customer_phone.setFont(font)
 
             self.label_customer_time = QtWidgets.QLabel(self.InfoWindow)
-            self.label_customer_time.setGeometry(QtCore.QRect(50,250,300,50))
+            self.label_customer_time.setGeometry(QtCore.QRect(50, 250, 300, 50))
             self.label_customer_time.setText("取餐时间 Time:")
             self.label_customer_time.setFont(font)
 
             self.text_name = QtWidgets.QLineEdit(self.InfoWindow)
-            self.text_name.setGeometry(QtCore.QRect(50,100,300,50))
+            self.text_name.setGeometry(QtCore.QRect(50, 100, 300, 50))
             self.text_name.setFont(font)
 
             self.text_phone = QtWidgets.QLineEdit(self.InfoWindow)
@@ -464,20 +508,20 @@ class MainUI(object):
             self.text_time.setInputMask("00:00")
 
             self.text_search = QtWidgets.QLineEdit(self.InfoWindow)
-            self.text_search.setGeometry(QtCore.QRect(400,30,450,50))
+            self.text_search.setGeometry(QtCore.QRect(400, 30, 450, 50))
             self.text_search.setFont(font)
 
             self.list_info = QtWidgets.QListWidget(self.InfoWindow)
-            self.list_info.setGeometry(QtCore.QRect(400,100,450,400))
+            self.list_info.setGeometry(QtCore.QRect(400, 100, 450, 400))
             self.list_info.setFont(font)
 
             self.btn_add = QtWidgets.QPushButton(self.InfoWindow)
-            self.btn_add.setGeometry(QtCore.QRect(200,450,100,50))
+            self.btn_add.setGeometry(QtCore.QRect(200, 450, 100, 50))
             self.btn_add.setText("添加")
             self.btn_add.setFont(font)
 
             self.btn_confirm = QtWidgets.QPushButton(self.InfoWindow)
-            self.btn_confirm.setGeometry(QtCore.QRect(50,450,100,50))
+            self.btn_confirm.setGeometry(QtCore.QRect(50, 450, 100, 50))
             self.btn_confirm.setText("确定")
             self.btn_confirm.setFont(font)
             return
@@ -488,7 +532,7 @@ class MainUI(object):
         def show(self):
             self.InfoWindow.show()
 
-        def search(self,temp):
+        def search(self, temp):
             result = {}
 
             for name in self.customers:
@@ -504,7 +548,7 @@ class MainUI(object):
             self.customers[name] = phone
             self.list_info.addItem("%s\n(%s)-%s-%s" % (name, phone[0], phone[1], phone[2]))
 
-            with open(self.file_path,'w') as w:
+            with open(self.file_path, 'w',encoding='utf-8') as w:
                 names = list(self.customers.keys())
                 names.sort()
                 for name in names:
@@ -512,7 +556,7 @@ class MainUI(object):
                     w.write("%s:%s-%s-%s\n" % (name, phone[0], phone[1], phone[2]))
 
         def read_customers(self):
-            with open(self.file_path,'r') as f:
+            with open(self.file_path, 'r',encoding='utf-8') as f:
                 lines = f.readlines()
                 f.close()
             for line in lines:
@@ -538,7 +582,7 @@ class MainUI(object):
             self.unpaid = 0
             self.PayWindow = QtWidgets.QMainWindow()
             self.PayWindow.setWindowTitle("付款信息 Payment")
-            self.PayWindow.resize(600,700)
+            self.PayWindow.resize(600, 700)
             self.PayWindow.setWindowFlag(QtCore.Qt.WindowStaysOnTopHint)
 
             font = QtGui.QFont()
@@ -556,7 +600,7 @@ class MainUI(object):
             self.label_total_amount.setFont(font)
 
             self.btn_cash = QtWidgets.QPushButton(self.PayWindow)
-            self.btn_cash.setGeometry(QtCore.QRect(50,100,150,50))
+            self.btn_cash.setGeometry(QtCore.QRect(50, 100, 150, 50))
             self.btn_cash.setText("现金 Cash")
             self.btn_cash.setFont(font)
             self.btn_cash.setCheckable(True)
@@ -601,7 +645,7 @@ class MainUI(object):
             self.line_cashback.setVisible(False)
 
             self.line_cash = QtWidgets.QLineEdit(self.PayWindow)
-            self.line_cash.setGeometry(350,100,150,50)
+            self.line_cash.setGeometry(350, 100, 150, 50)
             self.line_cash.setFont(font)
             self.line_cash.setInputMask("$00.00")
             self.line_cash.setVisible(False)
@@ -619,12 +663,12 @@ class MainUI(object):
             self.line_emt.setVisible(False)
 
             self.btn_confirm = QtWidgets.QPushButton(self.PayWindow)
-            self.btn_confirm.setGeometry(60,520,210,100)
+            self.btn_confirm.setGeometry(60, 520, 210, 100)
             self.btn_confirm.setFont(font)
             self.btn_confirm.setText("确认 Confirm")
 
             self.btn_cancel = QtWidgets.QPushButton(self.PayWindow)
-            self.btn_cancel.setGeometry(330,520,210,100)
+            self.btn_cancel.setGeometry(330, 520, 210, 100)
             self.btn_cancel.setFont(font)
             self.btn_cancel.setText("取消 Cancel")
             return
@@ -700,7 +744,6 @@ class MainUI(object):
                 self.line_cashback.setVisible(False)
                 self.btn_cashback.setCheckable(False)
 
-
             self.total = total
             self.unpaid = unpaid
             self.label_total_amount.setText("$%.2f" % total)
@@ -725,18 +768,18 @@ class MainUI(object):
             super().__init__()
             self.CommentWindow = QtWidgets.QMainWindow()
             self.CommentWindow.setWindowTitle("备注 Comment")
-            self.CommentWindow.resize(600,400)
+            self.CommentWindow.resize(600, 400)
 
             font = QtGui.QFont()
             font.setPointSize(18)
             font.setFamily("Microsoft JhengHei UI")
 
             self.line_comment = QtWidgets.QLineEdit(self.CommentWindow)
-            self.line_comment.setGeometry(QtCore.QRect(100,100,400,80))
+            self.line_comment.setGeometry(QtCore.QRect(100, 100, 400, 80))
             self.line_comment.setFont(font)
 
             self.btn_comment_confirm = QtWidgets.QPushButton(self.CommentWindow)
-            self.btn_comment_confirm.setGeometry(QtCore.QRect(200,250,200,100))
+            self.btn_comment_confirm.setGeometry(QtCore.QRect(200, 250, 200, 100))
             self.btn_comment_confirm.setFont(font)
             self.btn_comment_confirm.setText("Confirm 确认")
 
@@ -746,7 +789,6 @@ class MainUI(object):
 
         def close(self):
             self.CommentWindow.close()
-
 
 
 if __name__ == "__main__":
@@ -763,4 +805,3 @@ if __name__ == "__main__":
     bwindow.create_amount_btns()
 
     sys.exit(app.exec_())
-

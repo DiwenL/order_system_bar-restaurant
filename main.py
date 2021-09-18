@@ -74,7 +74,7 @@ class Main(QMainWindow, MainUI):
 
         try:
             cwd = os.getcwd()
-            with open(cwd + "/data/init.txt") as f:
+            with open(cwd + "/data/init.txt",encoding='utf-8') as f:
                 lines = f.readlines()
             for line in lines:
                 if "菜单颜色" in line:
@@ -304,7 +304,7 @@ class Main(QMainWindow, MainUI):
 
     def update_receipt(self, receipt_idx):
         self.unfinished_receipts[receipt_idx].store_receipt()
-        self.list_receipt.item(receipt_idx).setText('---------------------------------------\n%s\n---------------------------------------' % self.unfinished_receipts[receipt_idx].get_info())
+        self.list_receipt.item(receipt_idx).setText('%s' % self.unfinished_receipts[receipt_idx].get_info())
         return
 
     def update_order(self, order_idx):
@@ -375,7 +375,7 @@ class Main(QMainWindow, MainUI):
             self.unfinished_receipts.append(receipt)
 
             receipt_info = receipt.get_info()
-            self.list_receipt.addItem('---------------------------------------\n%s\n---------------------------------------' % receipt_info)
+            self.list_receipt.addItem('%s' % receipt_info)
 
             self.show_receipt(receipt)
         except  Exception as e:
